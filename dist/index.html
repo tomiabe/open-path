@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#212121">
+    <meta name="description" content="Open Path helps you understand your options, prepare for a move to Australia, and find your feet after you arrive.">
+    <title>Open Path | Find your way to Australia</title>
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=plein@700&f[]=switzer@400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Open Path home">
+        <span class="brand-mark" aria-hidden="true"><i class="ph-fill ph-compass"></i></span>
+        <span>Open Path</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#journey">Your journey</a>
+        <a href="#story">Our story</a>
+        <a href="#principles">What guides us</a>
+      </nav>
+      <a class="header-cta" href="#journey">Find your starting point <i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+        <i class="ph-fill ph-list" aria-hidden="true"></i>
+      </button>
+      <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
+        <a href="#journey">Your journey</a>
+        <a href="#story">Our story</a>
+        <a href="#principles">What guides us</a>
+        <a href="#journey">Find your starting point <i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <img class="hero-image" src="https://images.unsplash.com/photo-1584615919487-110ee3c56a4c?auto=format&fit=crop&w=2400&q=85" alt="A tram moves through a busy Melbourne street as people cross the road" fetchpriority="high">
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-content">
+          <h1 id="hero-title">A move to Australia has a lot of steps. Take them one at a time.</h1>
+          <p>Open Path helps you understand your options, prepare for the paperwork, and find your feet after you arrive.</p>
+          <div class="hero-actions">
+            <a class="button button-yellow" href="#journey">Find your starting point <i class="ph-fill ph-arrow-right" aria-hidden="true"></i></a>
+            <a class="text-link text-link-light" href="#story">Why we started Open Path <i class="ph-fill ph-arrow-down-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="hero-caption"><span class="caption-line"></span> Melbourne, Australia</div>
+      </section>
+
+      <section class="intro section-wrap" id="story" aria-labelledby="story-title">
+        <div class="intro-copy">
+          <h2 id="story-title">Australia wasn't on our radar either.</h2>
+          <p class="intro-lead">One research opportunity opened a door. Then came the applications, the documents, the waiting, the flight, and a hundred small things to learn after landing.</p>
+          <p>We know what it feels like to piece together a plan from official pages, personal stories, videos, and advice from people who've made the move. Open Path is being built to make that path easier to see, one decision at a time.</p>
+          <a class="text-link" href="#journey">See the journey <i class="ph-fill ph-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        <figure class="intro-image-wrap">
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85" alt="A calm, lived-in apartment interior with room to make a new place feel like home" loading="lazy">
+          <figcaption><span>26 September</span><span>A new address, a lot to figure out</span></figcaption>
+        </figure>
+      </section>
+
+      <section class="journey-section" id="journey" aria-labelledby="journey-title">
+        <div class="section-wrap journey-wrap">
+          <div class="journey-heading">
+            <div>
+              <h2 id="journey-title">What does your next step look like?</h2>
+            </div>
+            <p>Moving countries can feel like one enormous decision. It gets easier to work through when you can see the part in front of you.</p>
+          </div>
+
+          <div class="journey-tabs" role="tablist" aria-label="Choose your stage of moving to Australia">
+            <button class="journey-tab" id="tab-explore" type="button" role="tab" aria-selected="true" aria-controls="journey-panel" tabindex="0" data-stage="explore">
+              <span class="tab-number">01</span><span>I'm exploring</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i>
+            </button>
+            <button class="journey-tab" id="tab-prepare" type="button" role="tab" aria-selected="false" aria-controls="journey-panel" tabindex="-1" data-stage="prepare">
+              <span class="tab-number">02</span><span>I'm getting ready</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i>
+            </button>
+            <button class="journey-tab" id="tab-settle" type="button" role="tab" aria-selected="false" aria-controls="journey-panel" tabindex="-1" data-stage="settle">
+              <span class="tab-number">03</span><span>I've arrived</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <div class="journey-panel" id="journey-panel" role="tabpanel" aria-labelledby="tab-explore" tabindex="0" aria-live="polite">
+            <div class="panel-copy">
+              <span class="panel-icon" aria-hidden="true"><i class="ph-fill ph-compass"></i></span>
+              <h3 id="panel-title">Start with what matters to you.</h3>
+              <p id="panel-description">Before comparing visas, get clear on who is moving, what you hope to do, and what a move would need to make possible.</p>
+              <a class="text-link" id="panel-link" href="https://immi.homeaffairs.gov.au/" target="_blank" rel="noreferrer">Explore official Australian immigration information <i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+            </div>
+            <div class="panel-list-wrap">
+              <p class="panel-list-title">A useful place to begin</p>
+              <ul class="panel-list" id="panel-list">
+                <li><i class="ph-fill ph-check-circle" aria-hidden="true"></i><span>Write down your reason for considering Australia</span></li>
+                <li><i class="ph-fill ph-check-circle" aria-hidden="true"></i><span>List who would be part of the move</span></li>
+                <li><i class="ph-fill ph-check-circle" aria-hidden="true"></i><span>Keep official requirements separate from personal stories</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="principles-section section-wrap" id="principles" aria-labelledby="principles-title">
+        <div class="principles-heading">
+          <h2 id="principles-title">A path you can understand and make your own.</h2>
+        </div>
+        <div class="principles-grid">
+          <article class="principle">
+            <span class="principle-icon" aria-hidden="true"><i class="ph-fill ph-map-trifold"></i></span>
+            <h3>See the shape of the journey</h3>
+            <p>Understand the decisions, preparation, and everyday details that can sit between your first idea and a new life.</p>
+          </article>
+          <article class="principle">
+            <span class="principle-icon" aria-hidden="true"><i class="ph-fill ph-check-square-offset"></i></span>
+            <h3>Know what to check next</h3>
+            <p>Turn a long list of unknowns into useful questions and manageable steps, grounded in official information.</p>
+          </article>
+          <article class="principle">
+            <span class="principle-icon" aria-hidden="true"><i class="ph-fill ph-house-line"></i></span>
+            <h3>Plan for life after arrival</h3>
+            <p>Make room for the practical things too, from finding a place to live to learning how your new city moves.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="closing-band" aria-labelledby="closing-title">
+        <div class="closing-inner">
+          <div>
+            <h2 id="closing-title">Your next step can be a small one.</h2>
+            <p>Start with the question you have today. The rest can come into focus as you go.</p>
+          </div>
+          <a class="button button-dark" href="#journey">Find your starting point <i class="ph-fill ph-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true"><i class="ph-fill ph-compass"></i></span><span>Open Path</span></a>
+      <p>Built from lived experience. Shaped around the questions that come with a move.</p>
+      <a href="https://immi.homeaffairs.gov.au/" target="_blank" rel="noreferrer">Australian Department of Home Affairs <i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+      <span class="footer-note">Open Path is an independent guide. It does not provide migration advice.</span>
+    </footer>
+  </body>
+</html>
