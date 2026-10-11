@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f7f4">
+    <meta name="description" content="Explore broad Australian migration pathways and find official information to guide your next steps.">
+    <title>Find your starting point | Open Path</title>
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=plein@700&f[]=switzer@400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./pathways.css">
+    <script src="./pathways.js" defer></script>
+  </head>
+  <body class="pathfinder-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="path-header">
+      <a class="brand" href="./index.html" aria-label="Open Path home">
+        <span class="brand-mark" aria-hidden="true"><i class="ph-fill ph-compass"></i></span>
+        <span>Open Path</span>
+      </a>
+      <a class="back-home" href="./index.html"><i class="ph-fill ph-arrow-left" aria-hidden="true"></i> Back to home</a>
+    </header>
+
+    <main id="main" class="pathfinder-main">
+      <section class="path-intro" aria-labelledby="page-title">
+        <h1 id="page-title" tabindex="-1">Let's find a good place to begin.</h1>
+        <p>Answer three quick questions. We'll point you toward official information that fits the direction you're exploring.</p>
+        <p class="privacy-note"><i class="ph-fill ph-lock-key" aria-hidden="true"></i> Your answers stay on this page. Nothing is saved.</p>
+      </section>
+
+      <form class="path-form" id="path-form" novalidate>
+        <div class="progress-head">
+          <span id="step-label">Step 1 of 3</span>
+          <span id="step-topic">Your location</span>
+        </div>
+        <div class="progress-track" aria-hidden="true">
+          <span class="progress-segment is-current"></span>
+          <span class="progress-segment"></span>
+          <span class="progress-segment"></span>
+        </div>
+
+        <fieldset class="question-step" data-step="0">
+          <legend tabindex="-1">Where are you now?</legend>
+          <p class="question-help">This can affect which application instructions you need to read.</p>
+          <div class="choice-grid choice-grid-two">
+            <label class="choice-row">
+              <input type="radio" name="location" value="outside" required>
+              <span class="choice-icon" aria-hidden="true"><i class="ph-fill ph-globe-hemisphere-west"></i></span>
+              <span class="choice-copy"><strong>Outside Australia</strong><small>I'm exploring a move from another country</small></span>
+              <i class="ph-fill ph-check-circle choice-check" aria-hidden="true"></i>
+            </label>
+            <label class="choice-row">
+              <input type="radio" name="location" value="inside" required>
+              <span class="choice-icon" aria-hidden="true"><i class="ph-fill ph-map-pin"></i></span>
+              <span class="choice-copy"><strong>In Australia</strong><small>I'm here and working out what comes next</small></span>
+              <i class="ph-fill ph-check-circle choice-check" aria-hidden="true"></i>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="question-step" data-step="1" hidden>
+          <legend tabindex="-1">What is bringing Australia into view?</legend>
+          <p class="question-help">Choose the reason that feels closest. You can explore more than one later.</p>
+          <div class="choice-grid">
+            <label class="choice-row">
+              <input type="radio" name="reason" value="study" required>
+              <span class="choice-icon" aria-hidden="true"><i class="ph-fill ph-graduation-cap"></i></span>
+              <span class="choice-copy"><strong>Study or research</strong><small>A course, scholarship, or research opportunity</small></span>
+              <i class="ph-fill ph-check-circle choice-check" aria-hidden="true"></i>
+            </label>
+            <label class="choice-row">
+              <input type="radio" name="reason" value="student-family" required>
+              <span class="choice-icon" aria-hidden="true"><i class="ph-fill ph-user-focus"></i></span>
+              <span class="choice-copy"><strong>Accompany a student or researcher</strong><small>My partner or family member is planning to study here</small></span>
+              <i class="ph-fill ph-check-circle choice-check" aria-hidden="true"></i>
+            </label>
+            <label class="choice-row">
+              <input type="radio" name="reason" value="work" required>
+              <span class="choice-icon" aria-hidden="true"><i class="ph-fill ph-briefcase"></i></span>
+              <span class="choice-copy"><strong>Work or professional skills</strong><small>A career opportunity or a role that needs your skills</small></span>
+              <i class="ph-fill ph-check-circle choice-check" aria-hidden="true"></i>
+            </label>
+            <label class="choice-row">
+              <input type="radio" name="reason" value="family" required>
+              <span class="choice-icon" aria-hidden="true"><i class="ph-fill ph-users-three"></i></span>
+              <span class="choice-copy"><strong>Join a partner or family</strong><small>Someone close to me is connected to Australia</small></span>
+              <i class="ph-fill ph-check-circle choice-check" aria-hidden="true"></i>
+            </label>
+            <label class="choice-row">
+              <input type="radio" name="reason" value="protection" required>
+              <span class="choice-icon" aria-hidden="true"><i class="ph-fill ph-shield-check"></i></span>
+              <span class="choice-copy"><strong>Safety or humanitarian options</strong><small>I'm looking for official protection information</small></span>
+              <i class="ph-fill ph-check-circle choice-check" aria-hidden="true"></i>
+            </label>
+            <label class="choice-row">
+              <input type="radio" name="reason" value="visit" required>
+              <span class="choice-icon" aria-hidden="true"><i class="ph-fill ph-airplane-tilt"></i></span>
+              <span class="choice-copy"><strong>Visit or spend time here</strong><small>A temporary visit is my main goal</small></span>
+              <i class="ph-fill ph-check-circle choice-check" aria-hidden="true"></i>
+            </label>
+            <label class="choice-row">
+              <input type="radio" name="reason" value="unsure" required>
+              <span class="choice-icon" aria-hidden="true"><i class="ph-fill ph-question"></i></span>
+              <span class="choice-copy"><strong>I'm not sure yet</strong><small>I want to understand the broad options first</small></span>
+              <i class="ph-fill ph-check-circle choice-check" aria-hidden="true"></i>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="question-step" data-step="2" hidden>
+          <legend tabindex="-1">What do you already have in place?</legend>
+          <p class="question-help">This helps us choose a useful next step. You don't need to share names or documents.</p>
+          <div class="choice-grid">
+            <label class="choice-row">
+              <input type="radio" name="connection" value="confirmed" required>
+              <span class="choice-icon" aria-hidden="true"><i class="ph-fill ph-check-circle"></i></span>
+              <span class="choice-copy"><strong>A confirmed opportunity or connection</strong><small>For example, an offer, a role, or a family connection</small></span>
+              <i class="ph-fill ph-check-circle choice-check" aria-hidden="true"></i>
+            </label>
+            <label class="choice-row">
+              <input type="radio" name="connection" value="early" required>
+              <span class="choice-icon" aria-hidden="true"><i class="ph-fill ph-magnifying-glass"></i></span>
+              <span class="choice-copy"><strong>Some leads, nothing confirmed</strong><small>I'm comparing ideas and checking what might be possible</small></span>
+              <i class="ph-fill ph-check-circle choice-check" aria-hidden="true"></i>
+            </label>
+            <label class="choice-row">
+              <input type="radio" name="connection" value="beginning" required>
+              <span class="choice-icon" aria-hidden="true"><i class="ph-fill ph-path"></i></span>
+              <span class="choice-copy"><strong>I'm right at the beginning</strong><small>I need a clear overview before making plans</small></span>
+              <i class="ph-fill ph-check-circle choice-check" aria-hidden="true"></i>
+            </label>
+          </div>
+        </fieldset>
+
+        <p class="form-error" id="form-error" role="alert" hidden>Choose one option to continue.</p>
+        <div class="form-actions">
+          <button class="back-button" id="back-button" type="button" hidden><i class="ph-fill ph-arrow-left" aria-hidden="true"></i> Back</button>
+          <button class="button button-dark next-button" id="next-button" type="submit">Continue <i class="ph-fill ph-arrow-right" aria-hidden="true"></i></button>
+        </div>
+      </form>
+
+      <section class="results" id="results" aria-labelledby="results-title" aria-live="polite" hidden>
+        <div class="results-heading">
+          <h2 id="results-title" tabindex="-1">Starting points to investigate</h2>
+          <p id="results-intro"></p>
+        </div>
+        <div class="results-list" id="results-list"></div>
+        <div class="results-footer">
+          <p><i class="ph-fill ph-info" aria-hidden="true"></i> This is an orientation tool, not an eligibility assessment or migration advice. Requirements vary by visa and can change. Check the official information for your circumstances.</p>
+          <button class="reset-button" id="reset-button" type="button"><i class="ph-fill ph-arrow-counter-clockwise" aria-hidden="true"></i> Start again</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="path-footer">
+      <a class="path-footer-home" href="./index.html">Open Path</a>
+      <span>Official pages checked 12 October 2026</span>
+      <a href="https://immi.homeaffairs.gov.au/" target="_blank" rel="noreferrer">Department of Home Affairs <i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+    </footer>
+  </body>
+</html>
