@@ -43,7 +43,9 @@ img { display: block; max-width: 100%; }
 .button { display: inline-flex; min-height: 52px; align-items: center; justify-content: center; gap: 18px; padding: 0 19px; font-size: 15px; font-weight: 600; transition: background-color .18s ease, color .18s ease; }
 .button-yellow { color: var(--ink); background: var(--yellow); }
 .button i, .text-link i, .header-cta i { font-size: 17px; }
-.text-link { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); font-size: 15px; font-weight: 600; }
+.text-link { display: inline-flex; max-width: 100%; align-items: center; gap: 10px; color: var(--ink); font-size: 15px; font-weight: 600; text-decoration: none; }
+.text-link-label { min-width: 0; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; text-decoration-skip-ink: auto; overflow-wrap: anywhere; }
+.text-link i { flex: none; text-decoration: none; }
 .text-link:hover { color: var(--green); }
 .text-link-light { color: white; }
 .text-link-light:hover { color: var(--yellow); }

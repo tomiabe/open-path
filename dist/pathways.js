@@ -1,6 +1,7 @@
 const official = {
   student: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
   studentChanges: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/changes-to-student-visa-application-rules-500-590",
+  studentFamily: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/changes-to-student-visa-application-rules-500-590/family-members",
   workFinder: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-finder/work",
   skillSelect: "https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect",
   sponsored: "https://immi.homeaffairs.gov.au/visas/employing-and-sponsoring-someone/sponsoring-workers/learn-about-sponsoring/visa-options",
@@ -20,7 +21,10 @@ const reasons = {
         title: "Study or research",
         description: "The Student visa page explains the current course, enrolment, health cover, and application requirements. A scholarship or university offer is one part of planning. Check the visa requirements separately.",
         action: "Start with the current Student visa information and confirm details with your education provider.",
-        links: [{ label: "Student visa, subclass 500", url: official.student }],
+        links: [
+          { label: "Student visa, subclass 500", url: official.student },
+          { label: "Study and research guide", url: "./study-research.html", internal: true }
+        ],
         update: "Rules changed on 2 October 2026, including who can apply from inside Australia and how family can be included. Read the department's update if your location or family plans matter to you."
       }
     ]
@@ -32,7 +36,11 @@ const reasons = {
         title: "Family members of Student visa applicants",
         description: "Being a partner or family member of a student does not by itself confirm that you can be included in a visa application. The Department changed the rules for including family on Student visa applications from 2 October 2026, with exemptions and different rules for some earlier applications.",
         action: "If someone in your family is considering a course or research degree, check the current rules together before making plans.",
-        links: [{ label: "Current Student visa information", url: official.student }],
+        links: [
+          { label: "Current Student visa information", url: official.student },
+          { label: "Family member rules", url: official.studentFamily },
+          { label: "Study and research guide", url: "./study-research.html", internal: true }
+        ],
         update: "Do not rely on older videos or application guides for this question. Confirm whether the current rules and any exemption apply to the main applicant's situation."
       }
     ]
@@ -150,12 +158,17 @@ function makeSourceLink(link) {
   const icon = document.createElement("i");
   anchor.className = "source-link";
   anchor.href = link.url;
-  anchor.target = "_blank";
-  anchor.rel = "noreferrer";
-  anchor.append(document.createTextNode(link.label));
+  if (!link.internal) {
+    anchor.target = "_blank";
+    anchor.rel = "noreferrer";
+  }
+  const label = document.createElement("span");
+  label.className = "source-link-label";
+  label.textContent = link.label;
+  anchor.append(label);
   icon.className = "ph-fill ph-arrow-up-right";
   icon.setAttribute("aria-hidden", "true");
-  anchor.append(" ", icon);
+  anchor.append(icon);
   return anchor;
 }
 

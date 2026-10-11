@@ -47,9 +47,10 @@
 .result-card > p { max-width: 690px; margin: 8px 0 0; color: var(--charcoal); font-size: 14px; }
 .result-card .result-action { margin-top: 12px; color: var(--muted); font-size: 13px; }
 .source-links { display: flex; flex-wrap: wrap; gap: 9px 18px; margin-top: 15px; }
-.source-link { display: inline-flex; align-items: center; gap: 7px; color: var(--green); font-size: 13px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.source-link { display: inline-flex; max-width: 100%; align-items: center; gap: 7px; color: var(--green); font-size: 13px; font-weight: 600; text-decoration: none; }
+.source-link-label { min-width: 0; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-skip-ink: auto; overflow-wrap: anywhere; }
 .source-link:hover { color: var(--ink); }
-.source-link i { font-size: 15px; }
+.source-link i { flex: none; font-size: 15px; text-decoration: none; }
 .rule-update { display: flex; align-items: flex-start; gap: 9px; margin-top: 14px; padding: 12px 14px; color: #463d17; background: #fff8cd; font-size: 13px; }
 .rule-update > i { flex: none; margin-top: 2px; color: #705b00; font-size: 17px; }
 .rule-update a { font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }

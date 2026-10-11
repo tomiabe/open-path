@@ -11,14 +11,16 @@ const journeyContent = {
     ]
   },
   prepare: {
-    title: "Turn the plan into a working checklist.",
-    description: "Once you have a direction, gather the details that shape your application and keep a clear record of what each person needs to do.",
+    title: "Make the opportunity into a plan.",
+    description: "Study and research can involve a provider, a visa, family plans, health cover, documents, and the practical costs of moving.",
     icon: "ph-notebook",
-    link: "Check current requirements with Home Affairs",
+    link: "Read the study and research guide",
+    href: "./study-research.html",
+    internal: true,
     items: [
-      "Make one secure list of documents and expiry dates",
-      "Record every country each applicant has lived in",
-      "Follow the official instructions for health and character checks"
+      "Confirm the course or research details",
+      "Check current rules for partners and family",
+      "Plan for paperwork, health cover, and arrival"
     ]
   },
   settle: {
@@ -57,11 +59,21 @@ function selectStage(stage, focusTab = false) {
   panelTitle.textContent = content.title;
   panelDescription.textContent = content.description;
   panelIcon.className = `ph-fill ${content.icon}`;
-  panelLink.textContent = content.link;
+  const linkLabel = document.createElement("span");
+  linkLabel.className = "text-link-label";
+  linkLabel.textContent = content.link;
   const arrow = document.createElement("i");
   arrow.className = "ph-fill ph-arrow-up-right";
   arrow.setAttribute("aria-hidden", "true");
-  panelLink.append(" ", arrow);
+  panelLink.replaceChildren(linkLabel, arrow);
+  panelLink.href = content.href ?? "https://immi.homeaffairs.gov.au/";
+  if (content.internal) {
+    panelLink.removeAttribute("target");
+    panelLink.removeAttribute("rel");
+  } else {
+    panelLink.target = "_blank";
+    panelLink.rel = "noreferrer";
+  }
   panelList.replaceChildren(...content.items.map((item) => {
     const li = document.createElement("li");
     const icon = document.createElement("i");
