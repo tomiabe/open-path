@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f7f4">
+    <meta name="description" content="Keep track of job opportunities, application stages, and next steps with a private browser-based job search planner.">
+    <title>Job search tracker | Open Path</title>
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=plein@700&amp;f[]=switzer@400,500,600,700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./job-search.css">
+    <script src="./job-search.js" defer></script>
+  </head>
+  <body class="job-search-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="job-search-header">
+      <a class="brand" href="./index.html" aria-label="Open Path home">
+        <span class="brand-mark" aria-hidden="true"><i class="ph-fill ph-compass"></i></span>
+        <span>Open Path</span>
+      </a>
+      <a class="job-search-nav" href="./guides.html"><i class="ph-fill ph-arrow-left" aria-hidden="true"></i><span>All guides</span></a>
+    </header>
+
+    <main id="main">
+      <section class="job-search-hero" aria-labelledby="job-search-title">
+        <div>
+          <h1 id="job-search-title">Keep your job search moving, one next step at a time.</h1>
+          <p>A new job search can quickly turn into a lot of open tabs and half-remembered follow-ups. Keep the basics together, then decide what deserves your attention next.</p>
+        </div>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&amp;fit=crop&amp;w=1500&amp;q=85" alt="Colleagues sharing ideas around a table" fetchpriority="high">
+          <figcaption>A conversation can begin with one considered application.</figcaption>
+        </figure>
+      </section>
+
+      <section class="job-search-note" aria-label="Work permission reminder">
+        <span aria-hidden="true"><i class="ph-fill ph-identification-card"></i></span>
+        <div><h2>Check your work conditions before accepting a role.</h2><p>This tracker does not assess visa permission or whether a role is suitable for your circumstances. Check your own grant details or VEVO, and use official sources when you need advice.</p><a href="./starting-work.html"><span>Review work readiness checks</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a></div>
+      </section>
+
+      <section class="job-tracker" aria-labelledby="tracker-title">
+        <div class="tracker-heading">
+          <div><h2 id="tracker-title">Your application list</h2><p id="storage-message" aria-live="polite">Your entries stay in this browser on this device. They are not sent to Open Path.</p></div>
+          <button class="tracker-clear" id="clear-applications" type="button" title="Delete all saved applications"><i class="ph-fill ph-trash" aria-hidden="true"></i><span>Clear all</span></button>
+        </div>
+
+        <div class="tracker-stats" aria-label="Application summary">
+          <div><strong id="active-count">0</strong><span>In progress</span></div>
+          <div><strong id="interview-count">0</strong><span>Interviews</span></div>
+          <div><strong id="offer-count">0</strong><span>Offers</span></div>
+        </div>
+
+        <form class="application-form" id="application-form">
+          <h3>Add an opportunity</h3>
+          <div class="form-grid">
+            <label>Role or job title<input name="role" maxlength="100" required autocomplete="off" placeholder="For example, research assistant"></label>
+            <label>Employer or organisation<input name="employer" maxlength="100" required autocomplete="organization" placeholder="Organisation name"></label>
+            <label>Location <span class="optional-label">Optional</span><input name="location" maxlength="80" autocomplete="off" placeholder="City or remote"></label>
+            <label>Stage<select name="stage">
+              <option value="saved">Saved</option>
+              <option value="preparing">Preparing</option>
+              <option value="applied">Applied</option>
+              <option value="interview">Interview</option>
+              <option value="offer">Offer</option>
+              <option value="closed">Closed</option>
+            </select></label>
+            <label class="form-url">Job listing link <span class="optional-label">Optional</span><input name="url" type="url" maxlength="500" autocomplete="url" placeholder="https://"></label>
+          </div>
+          <div class="form-actions"><p>Do not add private documents, passport details, or account information.</p><button class="button button-dark" type="submit"><span>Add to list</span><i class="ph-fill ph-plus" aria-hidden="true"></i></button></div>
+        </form>
+
+        <div class="tracker-list-heading">
+          <h3>Opportunities</h3>
+          <div class="tracker-filters" role="group" aria-label="Filter opportunities">
+            <button type="button" data-stage-filter="all" aria-pressed="true">All</button>
+            <button type="button" data-stage-filter="open" aria-pressed="false">In progress</button>
+            <button type="button" data-stage-filter="closed" aria-pressed="false">Closed</button>
+          </div>
+        </div>
+        <p class="tracker-status" id="tracker-status" role="status" aria-live="polite" tabindex="-1"></p>
+        <p class="tracker-empty" id="tracker-empty">No opportunities added yet. Start with a role you want to follow up on.</p>
+        <ul class="application-list" id="application-list" aria-label="Saved job opportunities"></ul>
+      </section>
+
+      <section class="job-search-resources" aria-labelledby="job-resources-title">
+        <div><h2 id="job-resources-title">Research the role, not just the title.</h2><p>Job titles can mean different things across industries. Compare the actual duties, required registration, location, and conditions before deciding where to focus.</p></div>
+        <a href="https://www.jobsandskills.gov.au/data/occupation-and-industry-profiles" target="_blank" rel="noreferrer"><span>Explore occupation and industry profiles</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+        <a href="https://www.fairwork.gov.au/find-help-for/visa-holders-migrants" target="_blank" rel="noreferrer"><span>Read workplace guidance for visa holders</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+      </section>
+    </main>
+
+    <footer class="job-search-footer">
+      <a href="./index.html">Open Path</a>
+      <span>Official pages checked 13 October 2026</span>
+      <a href="./starting-work.html">Getting ready to work <i class="ph-fill ph-arrow-right" aria-hidden="true"></i></a>
+    </footer>
+  </body>
+</html>
