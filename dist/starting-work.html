@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f7f4">
+    <meta name="description" content="A practical guide to preparing for work in Australia, from checking visa conditions to understanding workplace rights.">
+    <title>Getting ready to work in Australia | Open Path</title>
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=plein@700&amp;f[]=switzer@400,500,600,700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./starting-work.css">
+    <script src="./starting-work.js" defer></script>
+  </head>
+  <body class="work-ready-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="work-ready-header">
+      <a class="brand" href="./index.html" aria-label="Open Path home">
+        <span class="brand-mark" aria-hidden="true"><i class="ph-fill ph-compass"></i></span>
+        <span>Open Path</span>
+      </a>
+      <a class="work-ready-nav" href="./guides.html"><i class="ph-fill ph-arrow-left" aria-hidden="true"></i><span>All guides</span></a>
+    </header>
+
+    <main id="main">
+      <section class="work-ready-hero" aria-labelledby="work-ready-title">
+        <div>
+          <h1 id="work-ready-title">Make your next work step a clear one.</h1>
+          <p>Starting work in a new country can mean learning a new set of rules while you look for the right opportunity. Take it one check at a time, and use official information for decisions that affect you.</p>
+          <a class="work-ready-start" href="#work-checklist"><span>Open your work checklist</span><i class="ph-fill ph-arrow-down" aria-hidden="true"></i></a>
+        </div>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&amp;fit=crop&amp;w=1500&amp;q=85" alt="Colleagues meeting around a table in a bright workplace" fetchpriority="high">
+          <figcaption>Find your footing, then build from there.</figcaption>
+        </figure>
+      </section>
+
+      <aside class="work-ready-notice" aria-label="Important visa information">
+        <span class="work-notice-icon" aria-hidden="true"><i class="ph-fill ph-identification-card"></i></span>
+        <div>
+          <h2>Your work permission depends on your visa conditions.</h2>
+          <p>Check your own grant information or VEVO before you work. Conditions can limit whether, where, or how much you can work. A general guide cannot confirm your individual work rights.</p>
+        </div>
+      </aside>
+
+      <section class="work-checklist" id="work-checklist" aria-labelledby="work-checklist-title">
+        <div class="work-checklist-heading">
+          <div>
+            <h2 id="work-checklist-title">A few useful checks before you begin.</h2>
+            <p>Choose the prompts that fit your situation. There is no required order.</p>
+          </div>
+          <button class="work-clear" id="clear-work-progress" type="button" title="Clear saved progress">
+            <i class="ph-fill ph-arrow-counter-clockwise" aria-hidden="true"></i><span>Clear progress</span>
+          </button>
+        </div>
+
+        <div class="work-progress">
+          <div><strong id="work-progress-count" aria-live="polite">0 of 6 reviewed</strong><span id="work-progress-message">Start anywhere. Not every prompt will apply to every person.</span></div>
+          <progress id="work-progress-bar" max="6" value="0" aria-label="Work readiness checklist progress">0%</progress>
+        </div>
+        <div class="work-controls">
+          <p>Progress stays in this browser on this device. Nothing is sent to Open Path.</p>
+          <div class="work-filters" role="group" aria-label="Filter checklist prompts">
+            <button type="button" data-work-filter="all" aria-pressed="true">All prompts</button>
+            <button type="button" data-work-filter="todo" aria-pressed="false">To review</button>
+            <button type="button" data-work-filter="done" aria-pressed="false">Reviewed</button>
+          </div>
+        </div>
+
+        <div class="work-groups" id="work-groups">
+          <section class="work-group" aria-labelledby="work-group-permission">
+            <div class="work-group-heading"><span>01</span><h3>Check what applies to you</h3></div>
+            <ul class="work-task-list">
+              <li class="work-task" data-task-id="visa-conditions">
+                <label><input type="checkbox"><span class="work-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="work-task-copy"><strong>Check your current visa conditions</strong><small>Use your grant details or VEVO. Check any limits before starting a role, and recheck if your visa changes.</small></span></label>
+                <a class="work-link" href="https://immi.homeaffairs.gov.au/visas/already-have-a-visa/check-visa-details-and-conditions/check-conditions-online/" target="_blank" rel="noreferrer"><span>Check conditions in VEVO</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+              </li>
+              <li class="work-task" data-task-id="credentials">
+                <label><input type="checkbox"><span class="work-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="work-task-copy"><strong>Find out whether your role needs local registration or a licence</strong><small>This depends on the occupation and where you plan to work. Check with the relevant regulator before assuming overseas qualifications are enough.</small></span></label>
+                <a class="work-link" href="https://ablis.business.gov.au/" target="_blank" rel="noreferrer"><span>Search licences and permits</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+              </li>
+            </ul>
+          </section>
+
+          <section class="work-group" aria-labelledby="work-group-prepare">
+            <div class="work-group-heading"><span>02</span><h3>Get ready for applications</h3></div>
+            <ul class="work-task-list">
+              <li class="work-task" data-task-id="work-story">
+                <label><input type="checkbox"><span class="work-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="work-task-copy"><strong>Prepare a clear summary of your experience</strong><small>Adapt your CV to the role, describe results in plain language, and keep contact details for referees who have agreed to be contacted.</small></span></label>
+              </li>
+              <li class="work-task" data-task-id="tfn">
+                <label><input type="checkbox"><span class="work-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="work-task-copy"><strong>Check the right time and way to apply for a tax file number</strong><small>Your options depend on your circumstances. Follow the ATO's current instructions and protect your tax and identity details.</small></span></label>
+                <a class="work-link" href="https://www.ato.gov.au/individuals-and-families/tax-file-number/apply-for-a-tfn" target="_blank" rel="noreferrer"><span>ATO: apply for a TFN</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+              </li>
+            </ul>
+          </section>
+
+          <section class="work-group" aria-labelledby="work-group-rights">
+            <div class="work-group-heading"><span>03</span><h3>Know the basics at work</h3></div>
+            <ul class="work-task-list">
+              <li class="work-task" data-task-id="workplace-rights">
+                <label><input type="checkbox"><span class="work-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="work-task-copy"><strong>Read about pay, conditions, and payslips</strong><small>Visa holders and migrant workers have workplace protections. Check which award, agreement, or employment terms apply to the role.</small></span></label>
+                <a class="work-link" href="https://www.fairwork.gov.au/find-help-for/visa-holders-migrants" target="_blank" rel="noreferrer"><span>Fair Work: visa holders and migrants</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+              </li>
+              <li class="work-task" data-task-id="job-safety">
+                <label><input type="checkbox"><span class="work-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="work-task-copy"><strong>Pause if a job offer asks you to pay first</strong><small>Be cautious of upfront recruitment fees, unusually easy high-paying work, or requests to move money. Verify the organisation using contact details you find independently.</small></span></label>
+                <a class="work-link" href="https://www.scamwatch.gov.au/types-of-scams/jobs-and-employment-scams" target="_blank" rel="noreferrer"><span>Spot job and employment scams</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </section>
+
+      <section class="work-next" aria-label="Continue exploring Open Path">
+        <div><h2>Still exploring work as a way to move?</h2><p>Visa pathways and preparing to start a job are separate questions. Explore work-related visa directions in the pathways guide.</p></div>
+        <a href="./work-pathways.html"><span>Explore work pathways</span><i class="ph-fill ph-arrow-right" aria-hidden="true"></i></a>
+      </section>
+    </main>
+
+    <footer class="work-footer">
+      <a href="./index.html">Open Path</a>
+      <span>Official pages checked 12 October 2026</span>
+      <a href="./settling-in.html">Your first month in Australia <i class="ph-fill ph-arrow-right" aria-hidden="true"></i></a>
+    </footer>
+  </body>
+</html>
