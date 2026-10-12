@@ -50,14 +50,19 @@ const panelList = document.querySelector("#panel-list");
 
 const cityScenes = [
   {
-    name: "Melbourne",
-    alt: "A green city tram travels along a busy Melbourne street",
-    image: "https://images.unsplash.com/photo-1584615919487-110ee3c56a4c?auto=format&fit=crop&w=2400&q=85"
-  },
-  {
     name: "Sydney",
     alt: "The Sydney Opera House and city skyline across the harbour",
     image: "https://images.unsplash.com/photo-1549177676-c2fd7773ea9c?auto=format&fit=crop&w=2400&q=85"
+  },
+  {
+    name: "Perth",
+    alt: "Perth city skyline rising behind green parkland",
+    image: "https://images.unsplash.com/photo-1782128958147-105181c3c332?auto=format&fit=crop&w=2400&q=85"
+  },
+  {
+    name: "Melbourne",
+    alt: "A green city tram travels along a busy Melbourne street",
+    image: "https://images.unsplash.com/photo-1584615919487-110ee3c56a4c?auto=format&fit=crop&w=2400&q=85"
   },
   {
     name: "Brisbane",
@@ -65,9 +70,24 @@ const cityScenes = [
     image: "https://images.unsplash.com/photo-1789758385737-1125f82baa59?auto=format&fit=crop&w=2400&q=85"
   },
   {
-    name: "Perth",
-    alt: "Perth city skyline rising behind green parkland",
-    image: "https://images.unsplash.com/photo-1782128958147-105181c3c332?auto=format&fit=crop&w=2400&q=85"
+    name: "Darwin",
+    alt: "Darwin's tropical waterfront and city skyline",
+    image: "https://images.unsplash.com/photo-1723259696330-8e379c28782a?auto=format&fit=crop&w=2400&q=85"
+  },
+  {
+    name: "Canberra",
+    alt: "Canberra's city buildings and green surroundings",
+    image: "https://images.unsplash.com/photo-1717232828279-e7f765ee447c?auto=format&fit=crop&w=2400&q=85"
+  },
+  {
+    name: "Hobart",
+    alt: "Boats and city buildings along Hobart's waterfront, with Mount Wellington behind",
+    image: "https://images.unsplash.com/photo-1663121198046-232685218db3?auto=format&fit=crop&w=2400&q=85"
+  },
+  {
+    name: "Adelaide",
+    alt: "Adelaide's city skyline rising above the surrounding parklands",
+    image: "https://images.unsplash.com/photo-1720485757241-0402b031ec42?auto=format&fit=crop&w=2400&q=85"
   }
 ];
 
@@ -78,25 +98,27 @@ function setSessionCity() {
 
   let city;
   try {
-    const currentName = sessionStorage.getItem("open-path-city-session");
+    const currentName = sessionStorage.getItem("open-path-city-session-v2");
     city = cityScenes.find((scene) => scene.name === currentName);
     if (!city) {
       const previousName = localStorage.getItem("open-path-city-previous");
       const options = cityScenes.filter((scene) => scene.name !== previousName);
       city = options[Math.floor(Math.random() * options.length)];
-      sessionStorage.setItem("open-path-city-session", city.name);
+      sessionStorage.setItem("open-path-city-session-v2", city.name);
       localStorage.setItem("open-path-city-previous", city.name);
     }
   } catch {
     city = cityScenes[Math.floor(Math.random() * cityScenes.length)];
   }
 
+  let displayedCity = city;
   heroImage.addEventListener("load", () => {
-    heroImage.alt = city.alt;
-    cityCaption.textContent = `${city.name}, Australia`;
+    heroImage.alt = displayedCity.alt;
+    cityCaption.textContent = `${displayedCity.name}, Australia`;
   }, { once: true });
   heroImage.addEventListener("error", () => {
     const fallback = cityScenes[0];
+    displayedCity = fallback;
     heroImage.alt = fallback.alt;
     cityCaption.textContent = `${fallback.name}, Australia`;
     heroImage.src = fallback.image;
