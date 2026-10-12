@@ -55,17 +55,20 @@
         </div>
         <div class="rental-selector">
           <label for="rental-region">Where are you looking?</label>
-          <select id="rental-region">
-            <option value="">Choose a state or territory</option>
-            <option value="nsw">New South Wales</option>
-            <option value="vic">Victoria</option>
-            <option value="qld">Queensland</option>
-            <option value="wa">Western Australia</option>
-            <option value="sa">South Australia</option>
-            <option value="tas">Tasmania</option>
-            <option value="act">Australian Capital Territory</option>
-            <option value="nt">Northern Territory</option>
-          </select>
+          <span class="select-control">
+            <select id="rental-region">
+              <option value="">Choose a state or territory</option>
+              <option value="nsw">New South Wales</option>
+              <option value="vic">Victoria</option>
+              <option value="qld">Queensland</option>
+              <option value="wa">Western Australia</option>
+              <option value="sa">South Australia</option>
+              <option value="tas">Tasmania</option>
+              <option value="act">Australian Capital Territory</option>
+              <option value="nt">Northern Territory</option>
+            </select>
+            <i class="ph-fill ph-caret-down select-control-arrow" aria-hidden="true"></i>
+          </span>
           <p class="rental-source-status" id="rental-source-status" role="status" aria-live="polite">Choose a location to see its official renting guide.</p>
           <a class="rental-source-link" id="rental-source-link" href="#" target="_blank" rel="noreferrer" hidden><span>Open official renting guide</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
         </div>

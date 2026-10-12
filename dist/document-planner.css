@@ -27,7 +27,7 @@
 .planner-clear i { font-size: 15px; }
 .pathway-focus { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, .62fr); align-items: center; gap: 20px; padding: 16px 0; border-top: 1px solid var(--line); }
 .pathway-focus label { font-size: 14px; font-weight: 600; }
-.pathway-focus select { width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid #a8a8a1; border-radius: 0; background: white; color: var(--ink); font: inherit; font-size: 14px; }
+.pathway-focus .select-control > select { width: 100%; min-height: 44px; padding: 0 42px 0 12px; border: 1px solid #a8a8a1; border-radius: 0; background: white; color: var(--ink); font: inherit; font-size: 14px; }
 .pathway-focus select:focus-visible { outline: 3px solid #146a50; outline-offset: 3px; }
 .planner-progress { display: grid; grid-template-columns: minmax(0, 1fr) 1fr; align-items: center; gap: 25px; margin-top: 25px; padding: 16px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .planner-progress-copy { display: flex; align-items: baseline; gap: 12px; }

@@ -33,7 +33,9 @@
 .application-form h3, .tracker-list-heading h3 { margin: 0; font-family: var(--display-font); font-size: 23px; }
 .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px 20px; margin-top: 16px; }
 .form-grid label { display: grid; min-width: 0; gap: 6px; color: var(--charcoal); font-size: 12px; font-weight: 600; }
-.form-grid input, .form-grid select, .application-controls select { width: 100%; min-height: 42px; padding: 0 11px; border: 1px solid #c8c8c2; border-radius: 0; background: white; color: var(--ink); font: inherit; font-size: 13px; }
+.form-grid input, .form-grid select, .application-controls select { width: 100%; min-height: 42px; border: 1px solid #c8c8c2; border-radius: 0; background: white; color: var(--ink); font: inherit; font-size: 13px; }
+.form-grid input { padding: 0 11px; }
+.form-grid .select-control > select, .application-controls .select-control > select { padding: 0 42px 0 11px; }
 .form-grid input:focus-visible, .form-grid select:focus-visible, .application-controls select:focus-visible, .tracker-filters button:focus-visible, .tracker-clear:focus-visible, .application-remove:focus-visible, .job-search-nav:focus-visible, .job-search-note a:focus-visible, .job-search-resources a:focus-visible, .job-search-footer a:focus-visible { outline: 3px solid #146a50; outline-offset: 3px; }
 .form-grid input::placeholder { color: #777872; }
 .form-url { grid-column: 1 / -1; }
@@ -57,8 +59,9 @@
 .application-details .application-location { color: var(--muted); font-size: 11px; }
 .application-url { display: inline-block; margin-top: 8px; color: var(--green); font-size: 11px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
 .application-controls { display: flex; align-items: center; gap: 9px; }
-.application-controls label { min-width: 0; }
-.application-controls select { min-width: 128px; min-height: 37px; padding-inline: 8px; font-size: 12px; }
+.application-controls .application-stage-label { min-width: 0; }
+.application-controls .select-control { min-width: 128px; }
+.application-controls .select-control > select { min-height: 37px; padding: 0 42px 0 8px; font-size: 12px; }
 .application-remove { display: grid; width: 37px; height: 37px; flex: none; place-items: center; border: 1px solid var(--line); background: white; color: var(--charcoal); font-size: 15px; cursor: pointer; }
 .job-search-resources { display: grid; width: min(1000px, 88%); grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 13px 28px; margin: 0 auto 66px; padding: 23px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .job-search-resources > div { grid-row: span 2; }

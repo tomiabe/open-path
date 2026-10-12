@@ -58,14 +58,14 @@
             <label>Role or job title<input name="role" maxlength="100" required autocomplete="off" placeholder="For example, research assistant"></label>
             <label>Employer or organisation<input name="employer" maxlength="100" required autocomplete="organization" placeholder="Organisation name"></label>
             <label>Location <span class="optional-label">Optional</span><input name="location" maxlength="80" autocomplete="off" placeholder="City or remote"></label>
-            <label>Stage<select name="stage">
+            <label>Stage<span class="select-control"><select name="stage">
               <option value="saved">Saved</option>
               <option value="preparing">Preparing</option>
               <option value="applied">Applied</option>
               <option value="interview">Interview</option>
               <option value="offer">Offer</option>
               <option value="closed">Closed</option>
-            </select></label>
+            </select><i class="ph-fill ph-caret-down select-control-arrow" aria-hidden="true"></i></span></label>
             <label class="form-url">Job listing link <span class="optional-label">Optional</span><input name="url" type="url" maxlength="500" autocomplete="url" placeholder="https://"></label>
           </div>
           <div class="form-actions"><p>Do not add private documents, passport details, or account information.</p><button class="button button-dark" type="submit"><span>Add to list</span><i class="ph-fill ph-plus" aria-hidden="true"></i></button></div>

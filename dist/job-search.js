@@ -86,7 +86,9 @@ function render() {
     }
 
     const controls = makeElement("div", "application-controls");
-    const stageLabel = makeElement("label", "visually-hidden", `Stage for ${item.role} at ${item.employer}`);
+    const stageLabel = makeElement("label", "application-stage-label");
+    const accessibleLabel = makeElement("span", "visually-hidden", `Stage for ${item.role} at ${item.employer}`);
+    const selectControl = makeElement("span", "select-control");
     const stage = document.createElement("select");
     stage.dataset.action = "stage";
     stage.dataset.id = item.id;
@@ -97,7 +99,10 @@ function render() {
       option.selected = item.stage === value;
       stage.append(option);
     });
-    stageLabel.append(stage);
+    const arrow = makeElement("i", "ph-fill ph-caret-down select-control-arrow");
+    arrow.setAttribute("aria-hidden", "true");
+    selectControl.append(stage, arrow);
+    stageLabel.append(accessibleLabel, selectControl);
     const remove = document.createElement("button");
     remove.type = "button";
     remove.className = "application-remove";

@@ -24,7 +24,7 @@
 .rental-local-copy p { margin: 7px 0 0; color: var(--muted); font-size: 13px; }
 .rental-selector { display: grid; gap: 7px; }
 .rental-selector label { color: var(--charcoal); font-size: 12px; font-weight: 700; }
-.rental-selector select { min-height: 44px; width: 100%; padding: 0 11px; border: 1px solid #aeadA7; border-radius: 0; background: white; color: var(--ink); font: inherit; font-size: 14px; }
+.rental-selector .select-control > select { min-height: 44px; width: 100%; padding: 0 42px 0 11px; border: 1px solid #aeadA7; border-radius: 0; background: white; color: var(--ink); font: inherit; font-size: 14px; }
 .rental-selector select:focus-visible { outline: 3px solid #146a50; outline-offset: 2px; }
 .rental-source-status { min-height: 18px; margin: 1px 0 0; color: var(--muted); font-size: 12px; }
 .rental-source-link { display: inline-flex; max-width: 100%; align-items: center; gap: 7px; color: var(--green); font-size: 12px; font-weight: 700; }
