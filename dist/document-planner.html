@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f7f4">
+    <meta name="description" content="A private, browser-based planner for organizing questions and next steps before an Australian visa application.">
+    <title>Plan your application documents | Open Path</title>
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=plein@700&f[]=switzer@400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./document-planner.css">
+    <script src="./document-planner.js" defer></script>
+  </head>
+  <body class="document-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="guide-header">
+      <a class="brand" href="./index.html" aria-label="Open Path home">
+        <span class="brand-mark" aria-hidden="true"><i class="ph-fill ph-compass"></i></span>
+        <span>Open Path</span>
+      </a>
+      <a class="guide-nav-link" href="./guides.html"><i class="ph-fill ph-arrow-left" aria-hidden="true"></i><span>All guides</span></a>
+    </header>
+
+    <main id="main">
+      <section class="planner-hero" aria-labelledby="planner-title">
+        <div>
+          <h1 id="planner-title">Before you gather documents, make a plan.</h1>
+          <p>The paperwork can come from different parts of your life and from more than one country. A little structure helps you see what to check, who it concerns, and what can wait.</p>
+          <a class="planner-start" href="#planner"><span>Start your plan</span><i class="ph-fill ph-arrow-down" aria-hidden="true"></i></a>
+        </div>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1400&q=85" alt="A notebook and pen ready for planning" fetchpriority="high">
+          <figcaption>Start with the application instructions, not someone else's document list.</figcaption>
+        </figure>
+      </section>
+
+      <section class="planner-notice" aria-labelledby="notice-title">
+        <span aria-hidden="true"><i class="ph-fill ph-info"></i></span>
+        <div>
+          <h2 id="notice-title">This is a planning tool, not a visa document checklist.</h2>
+          <p>Requirements depend on the visa, the people applying, and individual circumstances. Do not upload files or enter passport numbers, medical information, or other private details here. Your pathway choice and checkmarks stay in this browser on this device.</p>
+        </div>
+      </section>
+
+      <section class="planner-section" id="planner" aria-labelledby="planner-section-title">
+        <div class="planner-heading">
+          <div>
+            <h2 id="planner-section-title">A working list for your next steps.</h2>
+            <p>Use these prompts to organize your research. Follow the instructions for the exact visa you plan to apply for.</p>
+          </div>
+          <button class="planner-clear" id="clear-progress" type="button" aria-label="Clear saved planner progress" title="Clear saved progress">
+            <i class="ph-fill ph-arrow-counter-clockwise" aria-hidden="true"></i><span>Clear progress</span>
+          </button>
+        </div>
+
+        <div class="pathway-focus">
+          <label for="pathway-select">What kind of pathway are you researching?</label>
+          <select id="pathway-select" name="pathway">
+            <option value="unsure">I'm still exploring</option>
+            <option value="study">Study or research</option>
+            <option value="student-family">Joining a student or researcher</option>
+            <option value="work">Work or professional skills</option>
+            <option value="family">Partner or family</option>
+            <option value="humanitarian">Refugee or humanitarian information</option>
+            <option value="visit">Visit or spend time in Australia</option>
+          </select>
+        </div>
+
+        <div class="planner-progress">
+          <div class="planner-progress-copy"><strong id="progress-count" aria-live="polite">0 of 10 complete</strong><span id="progress-message">Start with the steps that fit your situation.</span></div>
+          <progress id="progress-bar" max="10" value="0" aria-label="Document planner progress">0%</progress>
+        </div>
+        <div class="planner-controls">
+          <p>Nothing is sent to Open Path.</p>
+          <div class="planner-filters" role="group" aria-label="Filter planning tasks">
+            <button type="button" data-filter="all" aria-pressed="true">All tasks</button>
+            <button type="button" data-filter="todo" aria-pressed="false">To do</button>
+            <button type="button" data-filter="done" aria-pressed="false">Done</button>
+          </div>
+        </div>
+
+        <div class="planner-groups" id="planner-groups">
+          <section class="planner-group" aria-labelledby="instructions-title">
+            <div class="planner-group-heading"><span>01</span><h3>Start with the right instructions</h3></div>
+            <ul class="planner-list">
+              <li class="planner-task" data-task-id="visa-instructions">
+                <label><input type="checkbox"><span class="planner-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="planner-copy"><strong>Find the current instructions for the visa you are considering</strong><small>Confirm the visa name, application steps, eligibility information, and where you need to be when you apply.</small></span></label>
+                <a class="planner-link" id="visa-instructions-link" href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-finder" target="_blank" rel="noreferrer"><span>Browse official visa options</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+              </li>
+              <li class="planner-task" data-task-id="document-checklist">
+                <label><input type="checkbox"><span class="planner-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="planner-copy"><strong>Find the document list for the exact visa you are considering</strong><small>Visa types use different application instructions. Check the requirements on the specific visa page once you have identified the route.</small></span></label>
+                <a class="planner-link" id="document-list-link" href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-finder" target="_blank" rel="noreferrer"><span>Browse official visa options</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+              </li>
+              <li class="planner-task" data-task-id="family-applicants">
+                <label><input type="checkbox"><span class="planner-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="planner-copy"><strong>Check the rules for each person who may be included</strong><small>Do not assume a partner or family member can be added. Check the current rules and the details of the main applicant's pathway.</small></span></label>
+                <a class="planner-link" id="family-rules-link" href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-finder" target="_blank" rel="noreferrer"><span>Browse official visa options</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+              </li>
+            </ul>
+          </section>
+
+          <section class="planner-group" aria-labelledby="evidence-title">
+            <div class="planner-group-heading"><span>02</span><h3>Map where your evidence may come from</h3></div>
+            <ul class="planner-list">
+              <li class="planner-task" data-task-id="identity-evidence">
+                <label><input type="checkbox"><span class="planner-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="planner-copy"><strong>Review identity and name-history instructions</strong><small>Check which identity records and name-change evidence, if any, are requested for your application.</small></span></label>
+              </li>
+              <li class="planner-task" data-task-id="country-records">
+                <label><input type="checkbox"><span class="planner-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="planner-copy"><strong>Check whether character documents apply to you</strong><small>Requirements can depend on your circumstances and the visa. If asked, list privately which countries and periods the instructions cover.</small></span></label>
+                <a class="planner-link" href="https://immi.homeaffairs.gov.au/help-support/meeting-our-requirements/character" target="_blank" rel="noreferrer"><span>Character requirements</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+              </li>
+              <li class="planner-task" data-task-id="purpose-evidence">
+                <label><input type="checkbox"><span class="planner-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="planner-copy"><strong>Match supporting evidence to the reason for your application</strong><small>Study, work, family, and other pathways ask different questions. Use the relevant visa page to identify what evidence is actually requested.</small></span></label>
+              </li>
+              <li class="planner-task" data-task-id="translations">
+                <label><input type="checkbox"><span class="planner-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="planner-copy"><strong>Check translation instructions before arranging translations</strong><small>Read the rules for the exact visa. Translator requirements can vary by application and where the translation is done.</small></span></label>
+                <a class="planner-link" id="translation-link" href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-finder" target="_blank" rel="noreferrer"><span>Browse official visa options</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+              </li>
+            </ul>
+          </section>
+
+          <section class="planner-group" aria-labelledby="timing-title">
+            <div class="planner-group-heading"><span>03</span><h3>Prepare the files and timing</h3></div>
+            <ul class="planner-list">
+              <li class="planner-task" data-task-id="health-timing">
+                <label><input type="checkbox"><span class="planner-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="planner-copy"><strong>Check whether health examinations are needed and when</strong><small>Do not book based only on another person's experience. The application process will tell you what applies; pre-application options are not available for every visa.</small></span></label>
+                <a class="planner-link" href="https://immi.homeaffairs.gov.au/help-support/meeting-our-requirements/health/when-to-have-health-examinations" target="_blank" rel="noreferrer"><span>When to have health examinations</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+              </li>
+              <li class="planner-task" data-task-id="file-quality">
+                <label><input type="checkbox"><span class="planner-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="planner-copy"><strong>Check file quality, formats, and upload limits</strong><small>Use the rules for your specific application. Keep pages together where instructed and make sure scans are clear and readable.</small></span></label>
+                <a class="planner-link" href="https://immi.homeaffairs.gov.au/help-support/applying-online-or-on-paper/online/attach-documents-to-your-application" target="_blank" rel="noreferrer"><span>Attaching documents online</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+              </li>
+              <li class="planner-task" data-task-id="secure-copies">
+                <label><input type="checkbox"><span class="planner-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="planner-copy"><strong>Keep your own secure copies of what you submit</strong><small>Store originals and working copies somewhere private. This planner does not store documents or sensitive notes.</small></span></label>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </section>
+
+      <section class="planner-sources" aria-labelledby="sources-title">
+        <div>
+          <h2 id="sources-title">Check the source again before you submit.</h2>
+          <p>Application pages and checklists can change. Use the current instructions for your visa and circumstances.</p>
+        </div>
+        <a class="planner-link" href="https://immi.homeaffairs.gov.au/help-support/applying-online-or-on-paper/online/attach-documents-to-your-application" target="_blank" rel="noreferrer"><span>Department of Home Affairs: attaching documents</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+      </section>
+    </main>
+
+    <footer class="guide-footer document-footer">
+      <a class="guide-footer-brand" href="./index.html">Open Path</a>
+      <span>Official pages checked 12 October 2026</span>
+      <a href="./pathways.html">Find your starting point <i class="ph-fill ph-arrow-right" aria-hidden="true"></i></a>
+    </footer>
+  </body>
+</html>

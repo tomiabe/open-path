@@ -53,6 +53,7 @@ const reasons = {
         description: "Some skilled visas use an occupation, skills assessment, and invitation process. The exact requirements depend on the visa and your circumstances.",
         action: "Use the official work visa finder, then check whether SkillSelect is relevant to the route you are considering.",
         links: [
+          { label: "Work and skilled pathways guide", url: "./work-pathways.html", internal: true },
           { label: "Work visa finder", url: official.workFinder },
           { label: "SkillSelect", url: official.skillSelect }
         ]
@@ -61,7 +62,10 @@ const reasons = {
         title: "Employer-sponsored options",
         description: "An Australian employer may be able to sponsor a worker for a nominated skilled role. The employer and role have their own requirements too.",
         action: "If you have an employer connection, read the department's sponsorship information together with the visa details.",
-        links: [{ label: "Employer-sponsored visa options", url: official.sponsored }]
+        links: [
+          { label: "Work and skilled pathways guide", url: "./work-pathways.html", internal: true },
+          { label: "Employer-sponsored visa options", url: official.sponsored }
+        ]
       }
     ]
   },
@@ -73,6 +77,7 @@ const reasons = {
         description: "The available route depends on your relationship to the person in Australia and their status. Partner visas and other family visas have different requirements.",
         action: "Start with the official family visa finder. If you are joining a spouse or de facto partner, read the partner visa overview as well.",
         links: [
+          { label: "Partner and family pathways guide", url: "./family-pathways.html", internal: true },
           { label: "Join family visa finder", url: official.familyFinder },
           { label: "About partner visas", url: official.partner }
         ]
@@ -129,7 +134,7 @@ const results = document.querySelector("#results");
 const topics = ["Your location", "Your reason", "Your starting point"];
 let currentStep = 0;
 
-function showStep(index) {
+function showStep(index, moveFocus = true) {
   currentStep = index;
   steps.forEach((step, stepIndex) => { step.hidden = stepIndex !== index; });
   segments.forEach((segment, segmentIndex) => {
@@ -143,7 +148,7 @@ function showStep(index) {
     ? 'Show my starting points <i class="ph-fill ph-arrow-right" aria-hidden="true"></i>'
     : 'Continue <i class="ph-fill ph-arrow-right" aria-hidden="true"></i>';
   errorMessage.hidden = true;
-  steps[index].querySelector("legend").focus?.();
+  if (moveFocus) steps[index].querySelector("legend").focus?.();
 }
 
 function readAnswers() {
@@ -172,7 +177,7 @@ function makeSourceLink(link) {
   return anchor;
 }
 
-function makeResultCard(card) {
+function makeResultCard(card, pathway) {
   const article = document.createElement("article");
   const title = document.createElement("h3");
   const description = document.createElement("p");
@@ -187,6 +192,15 @@ function makeResultCard(card) {
   sources.setAttribute("aria-label", "Official information");
   card.links.forEach((link) => sources.append(makeSourceLink(link)));
   article.append(title, description, action, sources);
+
+  const nextStep = makeSourceLink({
+    label: "Organize your document questions",
+    url: `./document-planner.html?pathway=${encodeURIComponent(pathway)}`,
+    internal: true
+  });
+  nextStep.classList.add("planner-next-link");
+  nextStep.querySelector("i").className = "ph-fill ph-arrow-right";
+  article.append(nextStep);
 
   if (card.update) {
     const update = document.createElement("p");
@@ -217,7 +231,16 @@ function showResults(answers) {
 
   const chosenReason = selectedReason.context.replace(/^You chose /, "").toLowerCase();
   document.querySelector("#results-intro").textContent = `You chose ${chosenReason} ${contextLine} These pages are a research starting point, not a personal visa match. ${locationLine}`;
-  document.querySelector("#results-list").replaceChildren(...selectedReason.cards.map(makeResultCard));
+  const plannerPathway = {
+    study: "study",
+    "student-family": "student-family",
+    work: "work",
+    family: "family",
+    protection: "humanitarian",
+    visit: "visit",
+    unsure: "unsure"
+  }[answers.reason] || "unsure";
+  document.querySelector("#results-list").replaceChildren(...selectedReason.cards.map((card) => makeResultCard(card, plannerPathway)));
   form.hidden = true;
   results.hidden = false;
   results.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -244,8 +267,8 @@ document.querySelector("#reset-button").addEventListener("click", () => {
   form.reset();
   results.hidden = true;
   form.hidden = false;
-  showStep(0);
+  showStep(0, false);
   document.querySelector("#page-title").focus?.();
 });
 
-showStep(0);
+showStep(0, false);

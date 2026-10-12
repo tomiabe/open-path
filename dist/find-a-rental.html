@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f7f4">
+    <meta name="description" content="Get ready to rent in Australia with a practical checklist and direct links to official tenant information in each state and territory.">
+    <title>Find a place to rent | Open Path</title>
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=plein@700&amp;f[]=switzer@400,500,600,700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./find-a-rental.css">
+    <script src="./find-a-rental.js" defer></script>
+  </head>
+  <body class="rental-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="rental-header">
+      <a class="brand" href="./index.html" aria-label="Open Path home">
+        <span class="brand-mark" aria-hidden="true"><i class="ph-fill ph-compass"></i></span>
+        <span>Open Path</span>
+      </a>
+      <a class="rental-nav-link" href="./guides.html"><i class="ph-fill ph-arrow-left" aria-hidden="true"></i><span>All guides</span></a>
+    </header>
+
+    <main id="main">
+      <section class="rental-hero" aria-labelledby="rental-title">
+        <div>
+          <h1 id="rental-title">Finding a place to rent can mean learning a new system.</h1>
+          <p>There is the search, the application, the agreement, and the moment a new space starts to feel like home. Take the process one question at a time.</p>
+          <a class="rental-start" href="#rental-plan"><span>Start your rental plan</span><i class="ph-fill ph-arrow-down" aria-hidden="true"></i></a>
+        </div>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;w=1500&amp;q=85" alt="A bright living room in an Australian style apartment" fetchpriority="high">
+          <figcaption>Home can begin with one room and a few familiar things.</figcaption>
+        </figure>
+      </section>
+
+      <section class="rental-notice" aria-labelledby="rental-notice-title">
+        <span class="rental-notice-icon" aria-hidden="true"><i class="ph-fill ph-info"></i></span>
+        <div>
+          <h2 id="rental-notice-title">Rental rules depend on where and how you rent.</h2>
+          <p>State and territory rules differ. A private rental, room in a share house, student housing, or short stay may not follow the same process. Use this as a planning prompt and check the current official guidance for your exact arrangement.</p>
+        </div>
+      </section>
+
+      <section class="rental-local" aria-labelledby="rental-local-title">
+        <div class="rental-local-copy">
+          <span class="rental-local-icon" aria-hidden="true"><i class="ph-fill ph-map-pin"></i></span>
+          <div>
+            <h2 id="rental-local-title">Start with the local guide.</h2>
+            <p>Choose the state or territory where you plan to rent to open its official tenant information.</p>
+          </div>
+        </div>
+        <div class="rental-selector">
+          <label for="rental-region">Where are you looking?</label>
+          <select id="rental-region">
+            <option value="">Choose a state or territory</option>
+            <option value="nsw">New South Wales</option>
+            <option value="vic">Victoria</option>
+            <option value="qld">Queensland</option>
+            <option value="wa">Western Australia</option>
+            <option value="sa">South Australia</option>
+            <option value="tas">Tasmania</option>
+            <option value="act">Australian Capital Territory</option>
+            <option value="nt">Northern Territory</option>
+          </select>
+          <p class="rental-source-status" id="rental-source-status" role="status" aria-live="polite">Choose a location to see its official renting guide.</p>
+          <a class="rental-source-link" id="rental-source-link" href="#" target="_blank" rel="noreferrer" hidden><span>Open official renting guide</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+        </div>
+      </section>
+
+      <section class="rental-plan" id="rental-plan" aria-labelledby="rental-plan-title">
+        <div class="rental-plan-heading">
+          <div>
+            <h2 id="rental-plan-title">A few useful checks along the way.</h2>
+            <p>Keep track of what you have considered. These prompts are not requirements, and you can skip anything that does not fit.</p>
+          </div>
+          <button class="rental-clear" id="clear-rental-progress" type="button" aria-label="Clear saved rental checklist progress" title="Clear saved progress"><i class="ph-fill ph-arrow-counter-clockwise" aria-hidden="true"></i><span>Clear progress</span></button>
+        </div>
+
+        <div class="rental-progress">
+          <div><strong id="rental-progress-count" aria-live="polite">0 of 9 reviewed</strong><span id="rental-progress-message">Start anywhere. Your situation may call for different steps.</span></div>
+          <progress id="rental-progress-bar" max="9" value="0" aria-label="Rental planning progress">0%</progress>
+        </div>
+        <div class="rental-controls">
+          <p>Checkmarks stay in this browser on this device.</p>
+          <div class="rental-filters" role="group" aria-label="Filter rental planning prompts">
+            <button type="button" data-filter="all" aria-pressed="true">All prompts</button>
+            <button type="button" data-filter="todo" aria-pressed="false">To review</button>
+            <button type="button" data-filter="done" aria-pressed="false">Reviewed</button>
+          </div>
+        </div>
+
+        <div class="rental-groups" id="rental-groups">
+          <section class="rental-group" aria-labelledby="search-title">
+            <div class="rental-group-heading"><span>01</span><h3>Get clear on the search</h3></div>
+            <ul class="rental-task-list">
+              <li class="rental-task" data-task-id="search-priorities">
+                <label><input type="checkbox"><span class="rental-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="rental-task-copy"><strong>Choose a realistic area and list what matters most</strong><small>Think about your likely commute, household needs, nearby services, and the total amount you can manage.</small></span></label>
+              </li>
+              <li class="rental-task" data-task-id="temporary-stay">
+                <label><input type="checkbox"><span class="rental-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="rental-task-copy"><strong>Plan where you will stay while you look, if needed</strong><small>A short stay and a longer rental are separate decisions. Give yourself time to see the actual place and understand the arrangement.</small></span></label>
+                <a class="rental-link" href="./moving-budget.html"><span>Add initial accommodation to your budget</span><i class="ph-fill ph-arrow-right" aria-hidden="true"></i></a>
+              </li>
+              <li class="rental-task" data-task-id="application-details">
+                <label><input type="checkbox"><span class="rental-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="rental-task-copy"><strong>Find out what information an application asks you to provide</strong><small>Prepare only what the legitimate provider requests. Be thoughtful about sending identity and financial records through unfamiliar channels.</small></span></label>
+              </li>
+            </ul>
+          </section>
+
+          <section class="rental-group" aria-labelledby="viewing-title">
+            <div class="rental-group-heading"><span>02</span><h3>Check the property and the offer</h3></div>
+            <ul class="rental-task-list">
+              <li class="rental-task" data-task-id="view-property">
+                <label><input type="checkbox"><span class="rental-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="rental-task-copy"><strong>Work out how you or someone you trust can view the property</strong><small>Check that the home and person offering it are genuine before paying or sharing sensitive information.</small></span></label>
+                <a class="rental-link" href="https://www.scamwatch.gov.au/types-of-scams/buying-and-selling-scams" target="_blank" rel="noreferrer"><span>Scamwatch rental scam guidance</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+              </li>
+              <li class="rental-task" data-task-id="inspect-needs">
+                <label><input type="checkbox"><span class="rental-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="rental-task-copy"><strong>Check the space against your day-to-day needs</strong><small>Consider room for everyone, access, storage, furnishings, building facilities, and the routes you will use.</small></span></label>
+              </li>
+              <li class="rental-task" data-task-id="compare-costs">
+                <label><input type="checkbox"><span class="rental-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="rental-task-copy"><strong>Ask which costs are included and which are separate</strong><small>Check the advertised amount, payment timing, utilities, internet, parking, and any other costs in the written offer.</small></span></label>
+                <a class="rental-link" href="./moving-budget.html"><span>Review your household budget</span><i class="ph-fill ph-arrow-right" aria-hidden="true"></i></a>
+              </li>
+            </ul>
+          </section>
+
+          <section class="rental-group" aria-labelledby="move-in-title">
+            <div class="rental-group-heading"><span>03</span><h3>Before and after you agree</h3></div>
+            <ul class="rental-task-list">
+              <li class="rental-task" data-task-id="read-agreement">
+                <label><input type="checkbox"><span class="rental-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="rental-task-copy"><strong>Read the agreement and local guidance before signing</strong><small>Check names, dates, payment details, included services, and how the arrangement works. Ask the relevant tenant authority if something is unclear.</small></span></label>
+              </li>
+              <li class="rental-task" data-task-id="move-in-record">
+                <label><input type="checkbox"><span class="rental-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="rental-task-copy"><strong>Record the condition of the home when you move in</strong><small>Follow the timeframes and instructions for your location. Keep your completed report and clear dated photos with your own records.</small></span></label>
+              </li>
+              <li class="rental-task" data-task-id="keep-records">
+                <label><input type="checkbox"><span class="rental-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="rental-task-copy"><strong>Keep copies of the agreement and payment records</strong><small>Store the signed documents, bond or payment information, inspection notes, and messages somewhere you can find them.</small></span></label>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </section>
+
+      <section class="rental-next" aria-labelledby="rental-next-title">
+        <div><h2 id="rental-next-title">Once you have a place, the next steps get smaller.</h2><p>Settle into local transport, services, health information, and the first routines that make a new address feel like home.</p></div>
+        <a href="./settling-in.html"><span>Open the first-month guide</span><i class="ph-fill ph-arrow-right" aria-hidden="true"></i></a>
+      </section>
+    </main>
+
+    <footer class="rental-footer">
+      <a href="./index.html">Open Path</a>
+      <span>Official rental links reviewed 12 October 2026</span>
+      <a href="./guides.html">All guides <i class="ph-fill ph-arrow-right" aria-hidden="true"></i></a>
+    </footer>
+  </body>
+</html>

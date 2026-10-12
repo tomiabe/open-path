@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f7f4">
+    <meta name="description" content="Compare practical questions for choosing where to live in Australia, with official public transport planning links.">
+    <title>Where in Australia might fit your plans? | Open Path</title>
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=plein@700&amp;f[]=switzer@400,500,600,700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./choose-a-city.css">
+    <script src="./choose-a-city.js" defer></script>
+  </head>
+  <body class="city-planner-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="city-header">
+      <a class="brand" href="./index.html" aria-label="Open Path home">
+        <span class="brand-mark" aria-hidden="true"><i class="ph-fill ph-compass"></i></span>
+        <span>Open Path</span>
+      </a>
+      <a class="city-header-link" href="./guides.html"><i class="ph-fill ph-arrow-left" aria-hidden="true"></i><span>All guides</span></a>
+    </header>
+
+    <main id="main">
+      <section class="city-hero" aria-labelledby="city-title">
+        <div>
+          <h1 id="city-title">Where in Australia might fit your plans?</h1>
+          <p>A place is more than a skyline. Start with the opportunity, then think about housing, daily travel, and the people and services that matter to your household.</p>
+        </div>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1549177676-c2fd7773ea9c?auto=format&amp;fit=crop&amp;w=1500&amp;q=85" alt="Sydney Opera House and city buildings across the harbour" fetchpriority="high">
+          <figcaption>The right place depends on the life you are planning to build.</figcaption>
+        </figure>
+      </section>
+
+      <section class="city-approach" aria-labelledby="approach-title">
+        <span class="approach-icon" aria-hidden="true"><i class="ph-fill ph-compass-tool"></i></span>
+        <div>
+          <h2 id="approach-title">There is no universal best city.</h2>
+          <p>A university or research offer, a job, an employer, a family connection, or a specific visa condition may narrow the options before lifestyle preferences do. Check the opportunity and its location first.</p>
+        </div>
+      </section>
+
+      <section class="city-tool" aria-labelledby="city-tool-title">
+        <div class="city-tool-heading">
+          <h2 id="city-tool-title">Which places are on your list?</h2>
+          <p>Select up to three to compare the same practical questions. Nothing you select is sent or saved.</p>
+        </div>
+        <fieldset class="city-options">
+          <legend class="visually-hidden">Choose cities to compare</legend>
+          <label class="city-option"><input type="checkbox" value="sydney"><span class="city-option-mark" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span><strong>Sydney</strong><small>New South Wales</small></span></label>
+          <label class="city-option"><input type="checkbox" value="melbourne"><span class="city-option-mark" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span><strong>Melbourne</strong><small>Victoria</small></span></label>
+          <label class="city-option"><input type="checkbox" value="brisbane"><span class="city-option-mark" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span><strong>Brisbane</strong><small>Queensland</small></span></label>
+          <label class="city-option"><input type="checkbox" value="perth"><span class="city-option-mark" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span><strong>Perth</strong><small>Western Australia</small></span></label>
+          <label class="city-option"><input type="checkbox" value="adelaide"><span class="city-option-mark" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span><strong>Adelaide</strong><small>South Australia</small></span></label>
+          <label class="city-option"><input type="checkbox" value="canberra"><span class="city-option-mark" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span><strong>Canberra</strong><small>Australian Capital Territory</small></span></label>
+          <label class="city-option"><input type="checkbox" value="hobart"><span class="city-option-mark" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span><strong>Hobart</strong><small>Tasmania</small></span></label>
+          <label class="city-option"><input type="checkbox" value="darwin"><span class="city-option-mark" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span><strong>Darwin</strong><small>Northern Territory</small></span></label>
+        </fieldset>
+        <p class="city-selection-status" id="city-selection-status" role="status" aria-live="polite">Add another place to compare.</p>
+
+        <div class="comparison-wrap" id="comparison-wrap" hidden tabindex="0" aria-label="City comparison table. Scroll horizontally to see all selected places.">
+          <table class="comparison-table">
+            <caption class="visually-hidden">Questions to research for each selected city</caption>
+            <thead id="comparison-head"></thead>
+            <tbody id="comparison-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="city-reminder" aria-labelledby="regional-title">
+        <span class="reminder-icon" aria-hidden="true"><i class="ph-fill ph-map-pin-line"></i></span>
+        <div>
+          <h2 id="regional-title">Considering a regional location?</h2>
+          <p>Regional definitions vary by visa. If your pathway depends on a designated area, check the exact postcode against the Department's current list. Do not rely on a city or region label alone.</p>
+          <a class="city-source-link" href="https://immi.homeaffairs.gov.au/visas/working-in-australia/regional-migration/eligible-regional-areas" target="_blank" rel="noreferrer"><span>Check designated regional areas</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+        </div>
+      </section>
+
+      <section class="city-disclaimer" aria-label="Important information">
+        <p>This tool does not rank or recommend cities. Transport routes, rental options, services, and visa settings change. Check current information for the exact suburb, campus, workplace, and visa you are considering.</p>
+      </section>
+    </main>
+
+    <footer class="city-footer">
+      <a href="./index.html">Open Path</a>
+      <span>Official pages checked 12 October 2026</span>
+      <a href="./pathways.html">Find your starting point <i class="ph-fill ph-arrow-right" aria-hidden="true"></i></a>
+    </footer>
+  </body>
+</html>

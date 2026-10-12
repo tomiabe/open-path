@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f7f4">
+    <meta name="description" content="A practical first month checklist for finding your feet in Australia, with links to official information and progress saved only in your browser.">
+    <title>Your first month in Australia | Open Path</title>
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=plein@700&f[]=switzer@400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./settling-in.css">
+    <script src="./settling-in.js" defer></script>
+  </head>
+  <body class="settling-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="guide-header">
+      <a class="brand" href="./index.html" aria-label="Open Path home">
+        <span class="brand-mark" aria-hidden="true"><i class="ph-fill ph-compass"></i></span>
+        <span>Open Path</span>
+      </a>
+      <a class="guide-nav-link" href="./guides.html"><i class="ph-fill ph-arrow-left" aria-hidden="true"></i><span>All guides</span></a>
+    </header>
+
+    <main id="main">
+      <section class="settling-hero" aria-labelledby="settling-title">
+        <div class="settling-hero-copy">
+          <h1 id="settling-title">Your first month, one useful task at a time.</h1>
+          <p>A new place comes with a lot of small questions. Start with the things that make daily life easier, then let the rest happen at your pace.</p>
+          <a class="settling-start-link" href="#checklist"><span>Open your checklist</span><i class="ph-fill ph-arrow-down" aria-hidden="true"></i></a>
+        </div>
+        <figure class="settling-image">
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1500&q=85" alt="A bright apartment living room ready to make into a home" fetchpriority="high">
+          <figcaption>A place starts to feel like yours a little at a time.</figcaption>
+        </figure>
+      </section>
+
+      <section class="checklist-section" id="checklist" aria-labelledby="checklist-title">
+        <div class="checklist-heading">
+          <div>
+            <h2 id="checklist-title">A place to keep your next steps.</h2>
+            <p>Choose what is useful for your situation. This is a general starting list, not a set of requirements.</p>
+          </div>
+          <button class="clear-progress" id="clear-progress" type="button" aria-label="Clear saved checklist progress" title="Clear saved progress">
+            <i class="ph-fill ph-arrow-counter-clockwise" aria-hidden="true"></i><span>Clear progress</span>
+          </button>
+        </div>
+
+        <div class="progress-row">
+          <div class="progress-copy"><strong id="progress-count" aria-live="polite">0 of 10 complete</strong><span id="progress-message">Start anywhere. There is no required order.</span></div>
+          <progress id="progress-bar" max="10" value="0" aria-label="Checklist progress">0%</progress>
+        </div>
+
+        <div class="checklist-toolbar">
+          <p>Progress stays in this browser on this device. Nothing is sent to Open Path.</p>
+          <div class="check-filters" role="group" aria-label="Filter checklist tasks">
+            <button type="button" data-filter="all" aria-pressed="true">All tasks</button>
+            <button type="button" data-filter="todo" aria-pressed="false">To do</button>
+            <button type="button" data-filter="done" aria-pressed="false">Done</button>
+          </div>
+        </div>
+
+        <div class="task-groups" id="task-groups">
+          <section class="task-group" aria-labelledby="group-arrival-title">
+            <div class="task-group-heading"><span>01</span><h3 id="group-arrival-title">Start with the essentials</h3></div>
+            <ul class="task-list">
+              <li class="task-row" data-task-id="home-base">
+                <label class="task-label"><input type="checkbox"><span class="task-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="task-copy"><strong>Get your first address and important contacts in one place</strong><small>Keep accommodation details, key phone numbers, and any arrival instructions easy to find.</small></span></label>
+              </li>
+              <li class="task-row" data-task-id="local-route">
+                <label class="task-label"><input type="checkbox"><span class="task-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="task-copy"><strong>Try the route you will use most</strong><small>Check local public transport for your state or territory and practise a trip to work, campus, or a nearby shop.</small></span></label>
+              </li>
+              <li class="task-row" data-task-id="phone">
+                <label class="task-label"><input type="checkbox"><span class="task-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="task-copy"><strong>Set up the basics for staying connected</strong><small>Sort out phone access and decide how you will keep important documents and account details secure.</small></span></label>
+              </li>
+            </ul>
+          </section>
+
+          <section class="task-group" aria-labelledby="group-health-title">
+            <div class="task-group-heading"><span>02</span><h3 id="group-health-title">Understand health and visa details</h3></div>
+            <ul class="task-list">
+              <li class="task-row" data-task-id="visa-conditions">
+                <label class="task-label"><input type="checkbox"><span class="task-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="task-copy"><strong>Check your current visa details and conditions</strong><small>Use your grant information or VEVO. Work, study, and stay conditions depend on the visa held.</small></span></label>
+                <a class="task-link" href="https://immi.homeaffairs.gov.au/visas/already-have-a-visa/check-visa-details-and-conditions/check-conditions-online/" target="_blank" rel="noreferrer"><span>Check visa conditions online</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+              </li>
+              <li class="task-row" data-task-id="health-cover">
+                <label class="task-label"><input type="checkbox"><span class="task-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="task-copy"><strong>Know what health cover each person has</strong><small>Check your policy, what it covers, and whether each person may be eligible for Medicare. Do not assume eligibility from visa status alone.</small></span></label>
+                <div class="task-links">
+                  <a class="task-link" href="https://immi.homeaffairs.gov.au/help-support/meeting-our-requirements/health/adequate-health-insurance" target="_blank" rel="noreferrer"><span>Health cover for visa holders</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+                  <a class="task-link" href="https://www.servicesaustralia.gov.au/enrolling-medicare?context=60092" target="_blank" rel="noreferrer"><span>Who can enrol in Medicare</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+                </div>
+              </li>
+              <li class="task-row" data-task-id="local-care">
+                <label class="task-label"><input type="checkbox"><span class="task-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="task-copy"><strong>Find nearby everyday health services</strong><small>Look up a GP, pharmacy, and the right urgent care option for where you live. Check costs and cover before a non-urgent appointment.</small></span></label>
+              </li>
+            </ul>
+          </section>
+
+          <section class="task-group" aria-labelledby="group-work-title">
+            <div class="task-group-heading"><span>03</span><h3 id="group-work-title">Get ready for work and everyday admin</h3></div>
+            <ul class="task-list">
+              <li class="task-row" data-task-id="tax-file-number">
+                <label class="task-label"><input type="checkbox"><span class="task-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="task-copy"><strong>If relevant, check how to apply for a tax file number</strong><small>The application path depends on your circumstances and visa. Use the Australian Taxation Office's instructions.</small></span></label>
+                <a class="task-link" href="https://www.ato.gov.au/individuals-and-families/tax-file-number/apply-for-a-tfn" target="_blank" rel="noreferrer"><span>Apply for a TFN</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+              </li>
+              <li class="task-row" data-task-id="work-rights">
+                <label class="task-label"><input type="checkbox"><span class="task-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="task-copy"><strong>If you plan to work, learn about workplace rights</strong><small>Check your visa conditions separately. Fair Work has information for visa holders and migrant workers.</small></span></label>
+                <a class="task-link" href="https://www.fairwork.gov.au/find-help-for/visa-holders-migrants" target="_blank" rel="noreferrer"><span>Workplace help for visa holders</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+              </li>
+              <li class="task-row" data-task-id="local-rules">
+                <label class="task-label"><input type="checkbox"><span class="task-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="task-copy"><strong>Find the local information that matches your state or territory</strong><small>Public transport, renting, driving, and some services are managed locally. Check the relevant state or territory government site.</small></span></label>
+              </li>
+              <li class="task-row" data-task-id="weekly-rhythm">
+                <label class="task-label"><input type="checkbox"><span class="task-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="task-copy"><strong>Choose one small thing to make this week feel easier</strong><small>Set up a familiar route, find a nearby grocery shop, or make time to explore your neighbourhood.</small></span></label>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </section>
+
+      <section class="settling-story" aria-labelledby="settling-story-title">
+        <span class="story-icon" aria-hidden="true"><i class="ph-fill ph-house-line"></i></span>
+        <div>
+          <h2 id="settling-story-title">A new routine is built in small pieces.</h2>
+          <p>We are still learning our own routes, settling into a new apartment, and furnishing it bit by bit. The checklist is here to help you choose a next step, not to rush you through the first month.</p>
+        </div>
+      </section>
+
+      <section class="settling-footer-cta" aria-label="Continue exploring Open Path">
+        <div><h2>Need to revisit your options?</h2><p>Go back to your starting point and explore the official information for the path you are considering.</p></div>
+        <a class="button button-dark" href="./pathways.html"><span>Find your starting point</span><i class="ph-fill ph-arrow-right" aria-hidden="true"></i></a>
+      </section>
+    </main>
+
+    <footer class="guide-footer">
+      <a class="guide-footer-brand" href="./index.html">Open Path</a>
+      <span>Official pages checked 12 October 2026</span>
+      <a href="./study-research.html">Study and research guide <i class="ph-fill ph-arrow-right" aria-hidden="true"></i></a>
+    </footer>
+  </body>
+</html>

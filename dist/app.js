@@ -3,35 +3,39 @@ const journeyContent = {
     title: "Start with what matters to you.",
     description: "Before comparing visas, get clear on who is moving, what you hope to do, and what a move would need to make possible.",
     icon: "ph-compass",
-    link: "Explore official Australian immigration information",
+    link: "Find your starting point",
+    href: "./pathways.html",
+    internal: true,
     items: [
-      "Write down your reason for considering Australia",
-      "List who would be part of the move",
+      "Think about what you want from a move",
+      "List who might move with you",
       "Keep official requirements separate from personal stories"
     ]
   },
   prepare: {
-    title: "Make the opportunity into a plan.",
-    description: "Study and research can involve a provider, a visa, family plans, health cover, documents, and the practical costs of moving.",
-    icon: "ph-notebook",
-    link: "Read the study and research guide",
-    href: "./study-research.html",
+    title: "Turn your next step into a practical plan.",
+    description: "Once you have a pathway to investigate, organize the documents, questions, and official checks that apply to your situation.",
+    icon: "ph-files",
+    link: "Open the document planner",
+    href: "./document-planner.html",
     internal: true,
     items: [
-      "Confirm the course or research details",
-      "Check current rules for partners and family",
-      "Plan for paperwork, health cover, and arrival"
+      "Separate documents you have from those to request",
+      "Record the official requirements you need to confirm",
+      "Keep a list of questions and next actions"
     ]
   },
   settle: {
-    title: "Give the first weeks some breathing room.",
-    description: "A new country brings everyday questions alongside the big milestones. Pick a few practical tasks at a time and let your routine grow gradually.",
+    title: "Let the new place become familiar, one task at a time.",
+    description: "The first weeks bring everyday questions alongside the big milestones. Work through a practical checklist at your own pace and keep your progress on this device.",
     icon: "ph-house-line",
-    link: "Visit the Australian Government information portal",
+    link: "Open the first month checklist",
+    href: "./settling-in.html",
+    internal: true,
     items: [
-      "Work out your first month of housing and transport",
-      "Make a list of the local services you need to set up",
-      "Choose one useful task to finish this week"
+      "Learn how to get around your area",
+      "Check health cover and local services",
+      "Build a routine one small step at a time"
     ]
   }
 };
@@ -43,6 +47,64 @@ const panelDescription = document.querySelector("#panel-description");
 const panelIcon = document.querySelector(".panel-icon i");
 const panelLink = document.querySelector("#panel-link");
 const panelList = document.querySelector("#panel-list");
+
+const cityScenes = [
+  {
+    name: "Melbourne",
+    alt: "A green city tram travels along a busy Melbourne street",
+    image: "https://images.unsplash.com/photo-1584615919487-110ee3c56a4c?auto=format&fit=crop&w=2400&q=85"
+  },
+  {
+    name: "Sydney",
+    alt: "The Sydney Opera House and city skyline across the harbour",
+    image: "https://images.unsplash.com/photo-1549177676-c2fd7773ea9c?auto=format&fit=crop&w=2400&q=85"
+  },
+  {
+    name: "Brisbane",
+    alt: "The Brisbane River winding between city buildings",
+    image: "https://images.unsplash.com/photo-1789758385737-1125f82baa59?auto=format&fit=crop&w=2400&q=85"
+  },
+  {
+    name: "Perth",
+    alt: "Perth city skyline rising behind green parkland",
+    image: "https://images.unsplash.com/photo-1782128958147-105181c3c332?auto=format&fit=crop&w=2400&q=85"
+  }
+];
+
+function setSessionCity() {
+  const heroImage = document.querySelector(".hero-image");
+  const cityCaption = document.querySelector("#hero-city");
+  if (!heroImage || !cityCaption) return;
+
+  let city;
+  try {
+    const currentName = sessionStorage.getItem("open-path-city-session");
+    city = cityScenes.find((scene) => scene.name === currentName);
+    if (!city) {
+      const previousName = localStorage.getItem("open-path-city-previous");
+      const options = cityScenes.filter((scene) => scene.name !== previousName);
+      city = options[Math.floor(Math.random() * options.length)];
+      sessionStorage.setItem("open-path-city-session", city.name);
+      localStorage.setItem("open-path-city-previous", city.name);
+    }
+  } catch {
+    city = cityScenes[Math.floor(Math.random() * cityScenes.length)];
+  }
+
+  heroImage.addEventListener("load", () => {
+    heroImage.alt = city.alt;
+    cityCaption.textContent = `${city.name}, Australia`;
+  }, { once: true });
+  heroImage.addEventListener("error", () => {
+    const fallback = cityScenes[0];
+    heroImage.alt = fallback.alt;
+    cityCaption.textContent = `${fallback.name}, Australia`;
+    heroImage.src = fallback.image;
+  }, { once: true });
+  heroImage.src = city.image;
+}
+
+setSessionCity();
 
 function selectStage(stage, focusTab = false) {
   const content = journeyContent[stage];

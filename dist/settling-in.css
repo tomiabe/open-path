@@ -1,0 +1,106 @@
+.settling-page { background: var(--paper); }
+.settling-page [hidden] { display: none !important; }
+.settling-page .guide-header { display: flex; min-height: 76px; align-items: center; justify-content: space-between; padding: 0 max(6%, calc((100vw - 1120px) / 2)); border-bottom: 1px solid var(--line); }
+.settling-page .guide-header .brand { color: var(--ink); }
+.settling-page .guide-nav-link { display: inline-flex; align-items: center; gap: 8px; color: var(--charcoal); font-size: 14px; font-weight: 600; }
+.settling-page .guide-nav-link:hover { color: var(--green); }
+.settling-page .guide-nav-link i { flex: none; }
+.settling-hero { display: grid; width: min(1120px, 88%); grid-template-columns: 1fr .9fr; align-items: center; gap: 8%; margin: 0 auto; padding: 80px 0 76px; }
+.settling-hero-copy h1 { max-width: 580px; margin: 0; font-family: var(--display-font); font-size: 56px; line-height: 1.02; }
+.settling-hero-copy > p { max-width: 520px; margin: 20px 0 23px; color: var(--charcoal); font-size: 18px; }
+.settling-start-link { display: inline-flex; max-width: 100%; align-items: center; gap: 10px; color: var(--green); font-size: 14px; font-weight: 700; }
+.settling-start-link span { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; text-decoration-skip-ink: auto; overflow-wrap: anywhere; }
+.settling-start-link i { flex: none; }
+.settling-image { margin: 0; }
+.settling-image img { width: 100%; aspect-ratio: 1.2; object-fit: cover; }
+.settling-image figcaption { margin-top: 10px; color: var(--muted); font-size: 12px; }
+
+.checklist-section { width: min(900px, 88%); margin: 0 auto; padding: 55px 0 86px; border-top: 1px solid var(--line); }
+.checklist-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+.checklist-heading h2, .settling-story h2, .settling-footer-cta h2 { margin: 0; font-family: var(--display-font); font-size: 39px; line-height: 1.07; }
+.checklist-heading > div > p { margin: 10px 0 0; color: var(--muted); font-size: 15px; }
+.clear-progress { display: inline-flex; flex: none; min-height: 40px; align-items: center; gap: 7px; padding: 0 11px; border: 1px solid var(--line); background: white; color: var(--charcoal); font-size: 12px; font-weight: 600; cursor: pointer; }
+.clear-progress:hover { border-color: var(--green); color: var(--green); }
+.clear-progress i { font-size: 15px; }
+.progress-row { display: grid; grid-template-columns: minmax(0, 1fr) 1fr; align-items: center; gap: 30px; margin-top: 29px; padding: 17px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.progress-copy { display: flex; align-items: baseline; gap: 13px; }
+.progress-copy strong { font-size: 13px; }
+.progress-copy span { color: var(--muted); font-size: 12px; }
+.progress-row progress { width: 100%; height: 7px; border: 0; border-radius: 0; appearance: none; }
+.progress-row progress::-webkit-progress-bar { background: #e5e5e0; }
+.progress-row progress::-webkit-progress-value { background: var(--green); }
+.progress-row progress::-moz-progress-bar { background: var(--green); }
+.checklist-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 15px 0 25px; }
+.checklist-toolbar > p { margin: 0; color: var(--muted); font-size: 12px; }
+.check-filters { display: inline-flex; flex: none; border: 1px solid var(--line); background: white; }
+.check-filters button { min-height: 35px; padding: 0 12px; border: 0; border-right: 1px solid var(--line); background: transparent; color: var(--charcoal); font-size: 12px; font-weight: 600; cursor: pointer; }
+.check-filters button:last-child { border-right: 0; }
+.check-filters button[aria-pressed="true"] { color: white; background: var(--green); }
+.check-filters button:focus-visible, .clear-progress:focus-visible, .task-label:has(input:focus-visible) { outline: 3px solid #146a50; outline-offset: 3px; }
+.task-group { margin-top: 28px; }
+.task-group-heading { display: flex; align-items: baseline; gap: 15px; padding-bottom: 10px; border-bottom: 1px solid #bdbdb7; }
+.task-group-heading > span { color: #786400; font-size: 12px; font-weight: 700; }
+.task-group-heading h3 { margin: 0; font-family: var(--display-font); font-size: 23px; line-height: 1.15; }
+.task-list { display: grid; margin: 0; padding: 0; list-style: none; }
+.task-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: 10px 24px; padding: 17px 0; border-bottom: 1px solid var(--line); }
+.task-label { position: relative; display: grid; min-width: 0; grid-template-columns: 23px minmax(0, 1fr); align-items: start; gap: 12px; cursor: pointer; }
+.task-label input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.task-check { display: grid; width: 22px; height: 22px; place-items: center; border: 1px solid #979891; background: white; color: white; font-size: 15px; }
+.task-label input:checked + .task-check { border-color: var(--green); background: var(--green); }
+.task-copy { display: grid; gap: 3px; }
+.task-copy strong { font-size: 14px; line-height: 1.35; }
+.task-copy small { max-width: 650px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.task-row:has(input:checked) .task-copy strong { color: var(--muted); text-decoration: line-through; text-decoration-thickness: 1px; }
+.task-link, .task-links { display: flex; align-items: flex-start; gap: 8px 17px; }
+.task-links { grid-column: 2; flex-wrap: wrap; }
+.task-link { width: fit-content; max-width: 100%; flex: none; color: var(--green); font-size: 12px; font-weight: 700; text-decoration: none; }
+.task-link span { min-width: 0; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-skip-ink: auto; overflow-wrap: anywhere; }
+.task-link i { flex: none; font-size: 14px; text-decoration: none; }
+.task-link:hover { color: var(--ink); }
+.settling-story { display: grid; width: min(1120px, 88%); grid-template-columns: 42px minmax(0, 1fr); align-items: start; gap: 18px; margin: 0 auto 90px; padding: 27px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.story-icon { display: grid; width: 40px; height: 40px; place-items: center; color: var(--green); background: #e4eee8; font-size: 21px; }
+.settling-story h2 { font-size: 28px; }
+.settling-story p { max-width: 730px; margin: 8px 0 0; color: var(--muted); font-size: 14px; }
+.settling-footer-cta { display: flex; width: min(1120px, 88%); min-height: 190px; align-items: center; justify-content: space-between; gap: 28px; margin: 0 auto 75px; padding: 29px; background: var(--yellow); }
+.settling-footer-cta h2 { font-size: 31px; }
+.settling-footer-cta p { max-width: 550px; margin: 9px 0 0; color: #39362a; font-size: 14px; }
+.settling-footer-cta .button { gap: 11px; }
+.settling-footer-cta .button span { overflow-wrap: anywhere; }
+.settling-footer-cta .button i { flex: none; }
+.settling-page .guide-footer { display: flex; min-height: 72px; align-items: center; justify-content: space-between; gap: 20px; padding: 16px max(6%, calc((100vw - 1120px) / 2)); color: #d0d0d0; background: var(--ink); font-size: 12px; }
+.settling-page .guide-footer-brand { color: white; font-family: var(--display-font); font-size: 17px; }
+.settling-page .guide-footer > a:last-child { display: inline-flex; align-items: center; gap: 7px; color: var(--yellow); font-weight: 600; }
+.settling-page .guide-footer > a:last-child i { flex: none; }
+
+@media (max-width: 760px) {
+  .settling-hero { grid-template-columns: 1fr; gap: 27px; padding: 56px 0 49px; }
+  .settling-hero-copy h1 { max-width: 620px; font-size: 45px; }
+  .settling-hero-copy > p { font-size: 16px; }
+  .settling-image { max-width: 620px; }
+  .checklist-section { padding: 43px 0 65px; }
+  .checklist-heading h2 { font-size: 34px; }
+  .progress-row { grid-template-columns: 1fr; gap: 11px; }
+  .settling-story { grid-template-columns: 40px minmax(0, 1fr); gap: 15px; margin-bottom: 65px; }
+  .settling-footer-cta { width: 88%; min-height: 0; align-items: flex-start; flex-direction: column; margin-bottom: 58px; padding: 22px; }
+}
+@media (max-width: 520px) {
+  .settling-page .guide-header { min-height: 66px; padding-inline: 6%; }
+  .settling-page .guide-header .brand { font-size: 20px; }
+  .settling-page .guide-nav-link { gap: 6px; font-size: 12px; }
+  .settling-hero { padding-top: 43px; }
+  .settling-hero-copy h1 { font-size: 38px; }
+  .settling-image img { aspect-ratio: 1.1; }
+  .checklist-heading { align-items: flex-start; flex-direction: column; }
+  .checklist-heading h2 { font-size: 31px; }
+  .checklist-toolbar { align-items: flex-start; flex-direction: column; gap: 12px; }
+  .check-filters { width: 100%; }
+  .check-filters button { flex: 1; padding-inline: 7px; }
+  .task-group-heading h3 { font-size: 21px; }
+  .task-row { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .task-links { grid-column: 1; padding-left: 35px; }
+  .task-row > .task-link { margin-left: 35px; }
+  .task-copy strong { font-size: 13px; }
+  .settling-story h2 { font-size: 24px; }
+  .settling-footer-cta h2 { font-size: 27px; }
+  .settling-page .guide-footer { align-items: flex-start; flex-direction: column; gap: 8px; padding: 19px 6%; }
+}

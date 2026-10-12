@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f7f4">
+    <meta name="description" content="Prepare for a move to Australia with a flexible pre-departure checklist and links to current official information.">
+    <title>Before you travel to Australia | Open Path</title>
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=plein@700&amp;f[]=switzer@400,500,600,700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./before-you-travel.css">
+    <script src="./before-you-travel.js" defer></script>
+  </head>
+  <body class="travel-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="travel-header">
+      <a class="brand" href="./index.html" aria-label="Open Path home">
+        <span class="brand-mark" aria-hidden="true"><i class="ph-fill ph-compass"></i></span>
+        <span>Open Path</span>
+      </a>
+      <a class="travel-nav-link" href="./guides.html"><i class="ph-fill ph-arrow-left" aria-hidden="true"></i><span>All guides</span></a>
+    </header>
+
+    <main id="main">
+      <section class="travel-hero" aria-labelledby="travel-title">
+        <div>
+          <h1 id="travel-title">A move is made of many small preparations.</h1>
+          <p>Once Australia becomes a real plan, the practical questions arrive quickly. Use this list to keep track of what you want to check before travel, one step at a time.</p>
+          <a class="travel-start" href="#travel-checklist"><span>Open your checklist</span><i class="ph-fill ph-arrow-down" aria-hidden="true"></i></a>
+        </div>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&amp;fit=crop&amp;w=1500&amp;q=85" alt="An aircraft flying above the clouds" fetchpriority="high">
+          <figcaption>Leave space for the unexpected, and keep the important details close.</figcaption>
+        </figure>
+      </section>
+
+      <section class="travel-notice" aria-labelledby="travel-notice-title">
+        <span class="travel-notice-icon" aria-hidden="true"><i class="ph-fill ph-info"></i></span>
+        <div>
+          <h2 id="travel-notice-title">Start with your own visa and travel documents.</h2>
+          <p>This is a general planning list, not a visa checklist or travel clearance. Each person's visa, passport, health cover, and items to bring can be different. Follow the current instructions for every traveller in your household.</p>
+        </div>
+      </section>
+
+      <section class="travel-checklist" id="travel-checklist" aria-labelledby="checklist-title">
+        <div class="travel-checklist-heading">
+          <div>
+            <h2 id="checklist-title">Your pre-departure list</h2>
+            <p>Mark what you have reviewed. You can take the steps in the order that fits your plans.</p>
+          </div>
+          <button class="travel-clear" id="clear-travel-progress" type="button" aria-label="Clear saved checklist progress" title="Clear saved progress"><i class="ph-fill ph-arrow-counter-clockwise" aria-hidden="true"></i><span>Clear progress</span></button>
+        </div>
+
+        <div class="travel-progress">
+          <div><strong id="travel-progress-count" aria-live="polite">0 of 11 reviewed</strong><span id="travel-progress-message">Start anywhere. Not every prompt will apply to every person.</span></div>
+          <progress id="travel-progress-bar" max="11" value="0" aria-label="Pre-departure checklist progress">0%</progress>
+        </div>
+        <div class="travel-controls">
+          <p>Checkmarks stay in this browser on this device.</p>
+          <div class="travel-filters" role="group" aria-label="Filter pre-departure tasks">
+            <button type="button" data-filter="all" aria-pressed="true">All tasks</button>
+            <button type="button" data-filter="todo" aria-pressed="false">To review</button>
+            <button type="button" data-filter="done" aria-pressed="false">Reviewed</button>
+          </div>
+        </div>
+
+        <div class="travel-groups" id="travel-groups">
+          <section class="travel-group" aria-labelledby="travel-visa-title">
+            <div class="travel-group-heading"><span>01</span><h3 id="travel-visa-title">Check the visa and travel documents</h3></div>
+            <ul class="travel-task-list">
+              <li class="travel-task" data-task-id="grant-details">
+                <label><input type="checkbox"><span class="travel-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="travel-task-copy"><strong>Read the visa grant information for each traveller</strong><small>Check the details and any travel dates or conditions that matter to your plans.</small></span></label>
+                <a class="travel-link" href="https://immi.homeaffairs.gov.au/visas/already-have-a-visa/check-visa-details-and-conditions/overview" target="_blank" rel="noreferrer"><span>Check visa details and conditions</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+              </li>
+              <li class="travel-task" data-task-id="passport-match">
+                <label><input type="checkbox"><span class="travel-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="travel-task-copy"><strong>Check that each travel document matches the visa record</strong><small>If someone has a new passport or updated details, check how to notify Home Affairs before travelling.</small></span></label>
+                <a class="travel-link" href="https://immi.homeaffairs.gov.au/change-in-situation/passport-details" target="_blank" rel="noreferrer"><span>Update passport details</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+              </li>
+              <li class="travel-task" data-task-id="valid-document">
+                <label><input type="checkbox"><span class="travel-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="travel-task-copy"><strong>Confirm every traveller has a valid travel document</strong><small>Check the document each person will use for the journey and keep it accessible while travelling.</small></span></label>
+                <a class="travel-link" href="https://www.abf.gov.au/entering-and-leaving-australia/crossing-the-border" target="_blank" rel="noreferrer"><span>Australian Border Force travel information</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+              </li>
+            </ul>
+          </section>
+
+          <section class="travel-group" aria-labelledby="travel-arrival-title">
+            <div class="travel-group-heading"><span>02</span><h3 id="travel-arrival-title">Make the first days easier</h3></div>
+            <ul class="travel-task-list">
+              <li class="travel-task" data-task-id="first-address">
+                <label><input type="checkbox"><span class="travel-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="travel-task-copy"><strong>Arrange somewhere to stay for your first nights</strong><small>Keep the address, check-in instructions, and contact details where you can reach them after landing.</small></span></label>
+              </li>
+              <li class="travel-task" data-task-id="airport-plan">
+                <label><input type="checkbox"><span class="travel-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="travel-task-copy"><strong>Plan how you will get from the airport to your first stop</strong><small>Check the route, payment options, and a backup in case plans change.</small></span></label>
+                <a class="travel-link" href="./choose-a-city.html"><span>Compare places and transport options</span><i class="ph-fill ph-arrow-right" aria-hidden="true"></i></a>
+              </li>
+              <li class="travel-task" data-task-id="health-cover">
+                <label><input type="checkbox"><span class="travel-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="travel-task-copy"><strong>Confirm what health cover applies to each person</strong><small>Check any visa condition, cover dates, exclusions, and who is included. Do not assume Medicare eligibility.</small></span></label>
+                <a class="travel-link" href="https://immi.homeaffairs.gov.au/help-support/meeting-our-requirements/health/adequate-health-insurance" target="_blank" rel="noreferrer"><span>Health insurance information for visa holders</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+              </li>
+              <li class="travel-task" data-task-id="key-information">
+                <label><input type="checkbox"><span class="travel-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="travel-task-copy"><strong>Keep key contacts and reservations available offline</strong><small>Consider saving accommodation details, arrival plans, and important contact numbers somewhere secure.</small></span></label>
+              </li>
+            </ul>
+          </section>
+
+          <section class="travel-group" aria-labelledby="travel-packing-title">
+            <div class="travel-group-heading"><span>03</span><h3 id="travel-packing-title">Check what is coming with you</h3></div>
+            <ul class="travel-task-list">
+              <li class="travel-task" data-task-id="declare-goods">
+                <label><input type="checkbox"><span class="travel-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="travel-task-copy"><strong>Check whether food, plant, animal, or other goods need to be declared</strong><small>Look up the actual items you plan to carry. Rules can differ by item, and the official list can change.</small></span></label>
+                <a class="travel-link" href="https://www.abf.gov.au/entering-and-leaving-australia/can-you-bring-it-in/declare-it" target="_blank" rel="noreferrer"><span>Check what to declare</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+              </li>
+              <li class="travel-task" data-task-id="medicines">
+                <label><input type="checkbox"><span class="travel-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="travel-task-copy"><strong>Check travel guidance for any medicines you plan to bring</strong><small>Check each medicine against current official guidance and ask your prescriber about supporting documents.</small></span></label>
+                <a class="travel-link" href="https://www.abf.gov.au/entering-and-leaving-australia/can-you-bring-it-in/list-of-items?srckeyword=medicine" target="_blank" rel="noreferrer"><span>Check medicine import guidance</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+              </li>
+              <li class="travel-task" data-task-id="copies">
+                <label><input type="checkbox"><span class="travel-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="travel-task-copy"><strong>Decide how you will keep copies of essential records secure</strong><small>Choose a secure way to access important records if a bag or device is unavailable. Do not put private document numbers in this checklist.</small></span></label>
+              </li>
+              <li class="travel-task" data-task-id="arrival-declaration">
+                <label><input type="checkbox"><span class="travel-check" aria-hidden="true"><i class="ph-fill ph-check"></i></span><span class="travel-task-copy"><strong>Be ready to answer arrival and declaration questions accurately</strong><small>Follow the instructions provided for your journey. If you are unsure about an item, ask the relevant officer.</small></span></label>
+                <a class="travel-link" href="https://www.abf.gov.au/entering-and-leaving-australia/crossing-the-border" target="_blank" rel="noreferrer"><span>Read about crossing the border</span><i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </section>
+
+      <section class="travel-next" aria-labelledby="travel-next-title">
+        <div><h2 id="travel-next-title">You do not have to prepare everything at once.</h2><p>When you arrive, use the first-month guide to find local services and work through the everyday setup at your own pace.</p></div>
+        <a href="./settling-in.html"><span>Open the first-month guide</span><i class="ph-fill ph-arrow-right" aria-hidden="true"></i></a>
+      </section>
+    </main>
+
+    <footer class="travel-footer">
+      <a href="./index.html">Open Path</a>
+      <span>Official links reviewed 12 October 2026</span>
+      <a href="./pathways.html">Find your starting point <i class="ph-fill ph-arrow-right" aria-hidden="true"></i></a>
+    </footer>
+  </body>
+</html>

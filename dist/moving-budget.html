@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f7f4">
+    <meta name="description" content="Build a personal Australia relocation budget from costs you research, with one-off and monthly totals in Australian dollars.">
+    <title>Plan your moving budget | Open Path</title>
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=plein@700&amp;f[]=switzer@400,500,600,700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./moving-budget.css">
+    <script src="./moving-budget.js" defer></script>
+  </head>
+  <body class="budget-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="budget-header">
+      <a class="brand" href="./index.html" aria-label="Open Path home">
+        <span class="brand-mark" aria-hidden="true"><i class="ph-fill ph-compass"></i></span>
+        <span>Open Path</span>
+      </a>
+      <a class="budget-nav-link" href="./guides.html"><i class="ph-fill ph-arrow-left" aria-hidden="true"></i><span>All guides</span></a>
+    </header>
+
+    <main id="main">
+      <section class="budget-hero" aria-labelledby="budget-title">
+        <div>
+          <h1 id="budget-title">Make room for the costs around the move.</h1>
+          <p>Bring the numbers you have found into one place. Start with arrival costs, then add what your household may spend in a typical month.</p>
+        </div>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;w=1500&amp;q=85" alt="A furnished apartment living room" fetchpriority="high">
+          <figcaption>A realistic plan includes the first weeks as well as the longer term.</figcaption>
+        </figure>
+      </section>
+
+      <section class="budget-note" aria-labelledby="budget-note-title">
+        <span class="budget-note-icon" aria-hidden="true"><i class="ph-fill ph-info"></i></span>
+        <div>
+          <h2 id="budget-note-title">Use your own current estimates.</h2>
+          <p>Costs depend on your visa, location, household, and choices. Open Path does not provide price estimates here. Check current prices and requirements with the relevant provider or official source. All amounts below are in Australian dollars. The arrival plus one month figure combines one-off and monthly costs, so check whether any rent or fees paid in advance overlap.</p>
+        </div>
+      </section>
+
+      <section class="budget-workspace" aria-labelledby="worksheet-title">
+        <div class="budget-intro">
+          <div>
+            <h2 id="worksheet-title">Your moving budget</h2>
+            <p>Enter a whole-household amount for each line. Leave anything unknown blank and come back when you have checked it.</p>
+          </div>
+          <div class="household-control">
+            <label for="household-size">People in your household</label>
+            <input id="household-size" type="number" min="1" max="20" step="1" value="1" inputmode="numeric">
+          </div>
+        </div>
+
+        <div class="budget-summary" aria-live="polite" aria-atomic="true">
+          <div><span>One-off costs</span><strong id="one-off-total">A$0</strong></div>
+          <div><span>Monthly costs</span><strong id="monthly-total">A$0</strong></div>
+          <div><span>Arrival + one month</span><strong id="first-month-total">A$0</strong></div>
+          <p id="per-person-total">A$0 per person for arrival plus one month</p>
+        </div>
+
+        <form id="budget-form">
+          <fieldset class="budget-group">
+            <legend><span>01</span><span><strong>Get here and get set up</strong><small>One-off or initial costs for your household</small></span></legend>
+            <div class="budget-fields">
+              <label class="budget-field"><span>Visa and application costs</span><span class="money-input"><span aria-hidden="true">A$</span><input type="number" min="0" step="10" inputmode="decimal" data-cost="one-off" aria-label="Visa and application costs in Australian dollars" placeholder="0"></span></label>
+              <label class="budget-field"><span>Health checks, insurance, and assessments</span><span class="money-input"><span aria-hidden="true">A$</span><input type="number" min="0" step="10" inputmode="decimal" data-cost="one-off" aria-label="Health checks, insurance, and assessments in Australian dollars" placeholder="0"></span></label>
+              <label class="budget-field"><span>Flights and travel to Australia</span><span class="money-input"><span aria-hidden="true">A$</span><input type="number" min="0" step="10" inputmode="decimal" data-cost="one-off" aria-label="Flights and travel to Australia in Australian dollars" placeholder="0"></span></label>
+              <label class="budget-field"><span>Temporary accommodation</span><span class="money-input"><span aria-hidden="true">A$</span><input type="number" min="0" step="10" inputmode="decimal" data-cost="one-off" aria-label="Temporary accommodation in Australian dollars" placeholder="0"></span></label>
+              <label class="budget-field"><span>Rental bond and rent in advance</span><span class="money-input"><span aria-hidden="true">A$</span><input type="number" min="0" step="10" inputmode="decimal" data-cost="one-off" aria-label="Rental bond and rent in advance in Australian dollars" placeholder="0"></span></label>
+              <label class="budget-field"><span>Household items and setup</span><span class="money-input"><span aria-hidden="true">A$</span><input type="number" min="0" step="10" inputmode="decimal" data-cost="one-off" aria-label="Household items and setup in Australian dollars" placeholder="0"></span></label>
+              <label class="budget-field"><span>Shipping and luggage</span><span class="money-input"><span aria-hidden="true">A$</span><input type="number" min="0" step="10" inputmode="decimal" data-cost="one-off" aria-label="Shipping and luggage in Australian dollars" placeholder="0"></span></label>
+              <label class="budget-field"><span>Other initial costs</span><span class="money-input"><span aria-hidden="true">A$</span><input type="number" min="0" step="10" inputmode="decimal" data-cost="one-off" aria-label="Other initial costs in Australian dollars" placeholder="0"></span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="budget-group">
+            <legend><span>02</span><span><strong>Plan for a typical month</strong><small>Ongoing costs for your household</small></span></legend>
+            <div class="budget-fields">
+              <label class="budget-field"><span>Rent or mortgage</span><span class="money-input"><span aria-hidden="true">A$</span><input type="number" min="0" step="10" inputmode="decimal" data-cost="monthly" aria-label="Monthly rent or mortgage in Australian dollars" placeholder="0"></span></label>
+              <label class="budget-field"><span>Utilities and internet</span><span class="money-input"><span aria-hidden="true">A$</span><input type="number" min="0" step="10" inputmode="decimal" data-cost="monthly" aria-label="Monthly utilities and internet in Australian dollars" placeholder="0"></span></label>
+              <label class="budget-field"><span>Groceries and household supplies</span><span class="money-input"><span aria-hidden="true">A$</span><input type="number" min="0" step="10" inputmode="decimal" data-cost="monthly" aria-label="Monthly groceries and household supplies in Australian dollars" placeholder="0"></span></label>
+              <label class="budget-field"><span>Local transport</span><span class="money-input"><span aria-hidden="true">A$</span><input type="number" min="0" step="10" inputmode="decimal" data-cost="monthly" aria-label="Monthly local transport in Australian dollars" placeholder="0"></span></label>
+              <label class="budget-field"><span>Phone plans</span><span class="money-input"><span aria-hidden="true">A$</span><input type="number" min="0" step="10" inputmode="decimal" data-cost="monthly" aria-label="Monthly phone plans in Australian dollars" placeholder="0"></span></label>
+              <label class="budget-field"><span>Health cover and regular care</span><span class="money-input"><span aria-hidden="true">A$</span><input type="number" min="0" step="10" inputmode="decimal" data-cost="monthly" aria-label="Monthly health cover and regular care in Australian dollars" placeholder="0"></span></label>
+              <label class="budget-field"><span>Childcare, school, or study costs</span><span class="money-input"><span aria-hidden="true">A$</span><input type="number" min="0" step="10" inputmode="decimal" data-cost="monthly" aria-label="Monthly childcare, school, or study costs in Australian dollars" placeholder="0"></span></label>
+              <label class="budget-field"><span>Other regular costs</span><span class="money-input"><span aria-hidden="true">A$</span><input type="number" min="0" step="10" inputmode="decimal" data-cost="monthly" aria-label="Other monthly costs in Australian dollars" placeholder="0"></span></label>
+            </div>
+          </fieldset>
+        </form>
+
+        <div class="budget-actions">
+          <p>Your entries stay in this browser tab and are not saved or sent.</p>
+          <div>
+            <button class="budget-reset" id="reset-budget" type="reset" form="budget-form"><i class="ph-fill ph-arrow-counter-clockwise" aria-hidden="true"></i><span>Clear amounts</span></button>
+            <button class="budget-print" id="print-budget" type="button"><i class="ph-fill ph-printer" aria-hidden="true"></i><span>Print budget</span></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="budget-next" aria-labelledby="budget-next-title">
+        <div><h2 id="budget-next-title">A budget is a working document.</h2><p>Update it as you get real quotes, confirm your destination, and learn what your visa or household needs. Keep a separate buffer for costs you cannot predict yet.</p></div>
+        <a href="./choose-a-city.html"><span>Compare places to live</span><i class="ph-fill ph-arrow-right" aria-hidden="true"></i></a>
+      </section>
+    </main>
+
+    <footer class="budget-footer">
+      <a href="./index.html">Open Path</a>
+      <span>Illustrative planning tool</span>
+      <a href="./pathways.html">Find your starting point <i class="ph-fill ph-arrow-right" aria-hidden="true"></i></a>
+    </footer>
+  </body>
+</html>
