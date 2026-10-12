@@ -60,6 +60,9 @@
 .results-footer { display: flex; align-items: center; justify-content: space-between; gap: 22px; margin-top: 22px; padding-top: 18px; border-top: 1px solid #d7d7d1; }
 .results-footer > p { display: flex; max-width: 600px; align-items: flex-start; gap: 8px; margin: 0; color: var(--muted); font-size: 12px; }
 .results-footer > p i { flex: none; margin-top: 2px; color: var(--green); font-size: 16px; }
+.results-actions { display: grid; flex: none; justify-items: end; gap: 7px; }
+.plan-save-button { min-height: 44px; border: 0; font-size: 13px; cursor: pointer; }
+#plan-save-status { max-width: 270px; color: #a32621; font-size: 11px; text-align: right; }
 .reset-button { flex: none; color: var(--green); }
 .path-footer { display: flex; min-height: 68px; align-items: center; justify-content: space-between; gap: 18px; padding: 16px max(6%, calc((100vw - 1120px) / 2)); border-top: 1px solid var(--line); background: white; color: var(--muted); font-size: 12px; }
 .path-footer-home { color: var(--ink); font-family: var(--display-font); font-size: 17px; }
@@ -84,5 +87,7 @@
   .results-heading h2 { font-size: 32px; }
   .result-card { padding: 18px 17px; }
   .results-footer { align-items: flex-start; flex-direction: column; gap: 10px; }
+  .results-actions { width: 100%; justify-items: start; }
+  #plan-save-status { text-align: left; }
   .path-footer { align-items: flex-start; flex-direction: column; padding: 20px 6%; }
 }

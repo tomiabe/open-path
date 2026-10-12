@@ -132,6 +132,8 @@ const backButton = document.querySelector("#back-button");
 const nextButton = document.querySelector("#next-button");
 const results = document.querySelector("#results");
 const topics = ["Your location", "Your reason", "Your starting point"];
+const movePlanStorageKey = "open-path-move-plan-v1";
+const validReasons = new Set(["study", "student-family", "work", "family", "protection", "visit", "unsure"]);
 let currentStep = 0;
 
 function showStep(index, moveFocus = true) {
@@ -263,6 +265,27 @@ form.addEventListener("submit", (event) => {
 });
 
 backButton.addEventListener("click", () => showStep(currentStep - 1));
+document.querySelector("#save-move-plan").addEventListener("click", () => {
+  const answers = readAnswers();
+  const status = document.querySelector("#plan-save-status");
+  if (!validReasons.has(answers.reason) || !["outside", "inside"].includes(answers.location) || !["confirmed", "early", "beginning"].includes(answers.connection)) {
+    status.textContent = "Return to the questions and complete each step before building a plan.";
+    return;
+  }
+  try {
+    const existing = JSON.parse(localStorage.getItem(movePlanStorageKey) || "null");
+    const sameDirection = existing?.answers?.reason === answers.reason
+      && existing?.answers?.location === answers.location
+      && existing?.answers?.connection === answers.connection;
+    if (existing && !sameDirection && !window.confirm("Replace the move plan saved on this device with these new starting points?")) return;
+    const plan = sameDirection ? existing : { answers, completed: [] };
+    plan.answers = answers;
+    localStorage.setItem(movePlanStorageKey, JSON.stringify(plan));
+    window.location.href = "./move-plan.html";
+  } catch {
+    status.textContent = "This browser could not save the plan. Check browser storage settings and try again.";
+  }
+});
 document.querySelector("#reset-button").addEventListener("click", () => {
   form.reset();
   results.hidden = true;

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f7f4">
+    <meta name="description" content="Build a private, browser-based roadmap for exploring an Australia move and planning what to check next.">
+    <title>Your move plan | Open Path</title>
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=plein@700&amp;f[]=switzer@400,500,600,700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./move-plan.css">
+    <script src="./move-plan.js" defer></script>
+  </head>
+  <body class="move-plan-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="move-plan-header">
+      <a class="brand" href="./index.html" aria-label="Open Path home">
+        <span class="brand-mark" aria-hidden="true"><i class="ph-fill ph-compass"></i></span>
+        <span>Open Path</span>
+      </a>
+      <a class="move-plan-nav-link" href="./guides.html"><i class="ph-fill ph-arrow-left" aria-hidden="true"></i><span>All guides</span></a>
+    </header>
+
+    <main id="main">
+      <section class="move-plan-hero" aria-labelledby="move-plan-title">
+        <div>
+          <h1 id="move-plan-title">A clear next step, then the one after that.</h1>
+          <p>Bring the parts of your Australia plan into one place. This is a private working roadmap, not a visa assessment or a list of requirements.</p>
+        </div>
+        <div class="move-plan-mark" aria-hidden="true"><i class="ph-fill ph-map-trifold"></i></div>
+      </section>
+
+      <section class="move-plan-empty" id="move-plan-empty" hidden aria-labelledby="empty-title">
+        <span class="move-plan-empty-icon" aria-hidden="true"><i class="ph-fill ph-path"></i></span>
+        <div>
+          <h2 id="empty-title">Start with the question you have today.</h2>
+          <p>Answer a few broad questions first. If you choose to build a move plan, Open Path will save your direction and checklist progress only in this browser on this device.</p>
+          <a class="button button-dark" href="./pathways.html">Find your starting point <i class="ph-fill ph-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </section>
+
+      <section class="move-plan-workspace" id="move-plan-workspace" hidden aria-labelledby="workspace-title">
+        <div class="move-plan-summary">
+          <div>
+            <p class="move-plan-summary-label">Your starting point</p>
+            <h2 id="workspace-title"></h2>
+            <p id="workspace-context"></p>
+          </div>
+          <div class="move-plan-actions" aria-label="Move plan actions">
+            <a class="move-plan-edit" href="./pathways.html"><i class="ph-fill ph-pencil-simple" aria-hidden="true"></i><span>Change direction</span></a>
+            <button class="move-plan-print" id="print-plan" type="button" aria-label="Print or save this plan as a PDF" title="Print or save as PDF"><i class="ph-fill ph-printer" aria-hidden="true"></i></button>
+            <button class="move-plan-clear" id="clear-plan" type="button" aria-label="Clear this move plan" title="Clear this plan"><i class="ph-fill ph-trash" aria-hidden="true"></i></button>
+          </div>
+        </div>
+
+        <div class="move-plan-progress">
+          <div class="move-plan-progress-copy"><strong id="task-count" aria-live="polite">0 of 0 steps complete</strong><span id="storage-status" role="status">Saved on this device only.</span></div>
+          <progress id="task-progress" max="1" value="0" aria-label="Move plan progress">0%</progress>
+        </div>
+
+        <p class="move-plan-guidance">Use this as a working list. Skip anything that does not fit, and follow the current official instructions for your circumstances.</p>
+        <div class="move-plan-stages" id="move-plan-stages"></div>
+      </section>
+
+      <section class="move-plan-privacy" aria-label="Privacy and scope">
+        <span aria-hidden="true"><i class="ph-fill ph-lock-key"></i></span>
+        <p>Your selected direction and task checkmarks are stored in your browser on this device. No account is needed, and nothing is sent to Open Path. Do not enter or upload passport numbers, medical details, or other sensitive information.</p>
+      </section>
+    </main>
+
+    <footer class="move-plan-footer">
+      <a href="./index.html">Open Path</a>
+      <span>General information and lived experience, not migration advice.</span>
+      <a href="https://immi.homeaffairs.gov.au/" target="_blank" rel="noreferrer">Department of Home Affairs <i class="ph-fill ph-arrow-up-right" aria-hidden="true"></i></a>
+    </footer>
+  </body>
+</html>

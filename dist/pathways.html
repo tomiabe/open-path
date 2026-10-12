@@ -27,7 +27,7 @@
       <section class="path-intro" aria-labelledby="page-title">
         <h1 id="page-title" tabindex="-1">Let's find a good place to begin.</h1>
         <p>Answer three quick questions. We'll point you toward official information that fits the direction you're exploring.</p>
-        <p class="privacy-note"><i class="ph-fill ph-lock-key" aria-hidden="true"></i> Your answers stay on this page. Nothing is saved.</p>
+        <p class="privacy-note"><i class="ph-fill ph-lock-key" aria-hidden="true"></i> Your answers stay on this page. Choose whether to save them as a private move plan on this device.</p>
       </section>
 
       <form class="path-form" id="path-form" novalidate>
@@ -149,7 +149,11 @@
         <div class="results-list" id="results-list"></div>
         <div class="results-footer">
           <p><i class="ph-fill ph-info" aria-hidden="true"></i> This is an orientation tool, not an eligibility assessment or migration advice. Requirements vary by visa and can change. Check the official information for your circumstances.</p>
-          <button class="reset-button" id="reset-button" type="button"><i class="ph-fill ph-arrow-counter-clockwise" aria-hidden="true"></i> Start again</button>
+          <div class="results-actions">
+            <span id="plan-save-status" role="status" aria-live="polite"></span>
+            <button class="button button-dark plan-save-button" id="save-move-plan" type="button">Build my private move plan <i class="ph-fill ph-arrow-right" aria-hidden="true"></i></button>
+            <button class="reset-button" id="reset-button" type="button"><i class="ph-fill ph-arrow-counter-clockwise" aria-hidden="true"></i> Start again</button>
+          </div>
         </div>
       </section>
     </main>
