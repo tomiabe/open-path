@@ -17,6 +17,7 @@
 html { scroll-behavior: smooth; scroll-padding-top: 86px; }
 body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--body-font); font-size: 17px; line-height: 1.55; }
 a { color: inherit; text-decoration: none; }
+.source-register-link { font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-skip-ink: auto; }
 button { color: inherit; font: inherit; }
 img { display: block; max-width: 100%; }
 .select-control { position: relative; display: block; min-width: 0; }

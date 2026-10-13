@@ -1,0 +1,68 @@
+.source-notes-page { background: var(--paper); }
+.source-header { display: flex; min-height: 76px; align-items: center; justify-content: space-between; padding: 0 max(6%, calc((100vw - 1120px) / 2)); border-bottom: 1px solid var(--line); }
+.source-header .brand { color: var(--ink); }
+.source-nav-link { display: inline-flex; align-items: flex-start; gap: 8px; color: var(--green); font-size: 13px; font-weight: 600; }
+.source-nav-link span { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-skip-ink: auto; }
+.source-nav-link i { flex: none; }
+.source-nav-link:hover { color: var(--ink); }
+.source-intro, .source-method, .source-review, .source-caveat { width: min(1000px, 88%); margin-inline: auto; }
+.source-intro { display: flex; min-height: 205px; align-items: center; justify-content: space-between; gap: 30px; padding: 45px 0 34px; }
+.source-intro h1 { max-width: 730px; margin: 0; font-family: var(--display-font); font-size: 47px; line-height: 1.06; }
+.source-intro p { max-width: 700px; margin: 12px 0 0; color: var(--charcoal); font-size: 15px; }
+.source-intro-icon { display: grid; width: 62px; height: 62px; flex: none; place-items: center; color: var(--ink); background: var(--yellow); font-size: 30px; }
+.source-method { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 25px; padding: 19px 0 22px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.source-method > div { display: grid; align-content: start; gap: 5px; }
+.source-method strong { font-family: var(--display-font); font-size: 16px; line-height: 1.2; }
+.source-method span { color: var(--muted); font-size: 11px; line-height: 1.5; }
+.source-review { padding-top: 42px; }
+.source-review-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 25px; margin-bottom: 17px; }
+.source-review-heading h2, .source-caveat h2 { margin: 0; font-family: var(--display-font); font-size: 29px; line-height: 1.12; }
+.source-review-heading p { margin: 6px 0 0; color: var(--muted); font-size: 12px; }
+.source-review-heading .source-review-date { flex: none; color: var(--charcoal); font-size: 11px; font-weight: 600; }
+.source-group { display: grid; grid-template-columns: minmax(200px, .5fr) minmax(0, 1fr); gap: 28px; padding: 21px 0 24px; border-top: 1px solid var(--line); }
+.source-group-heading h3 { margin: 0; font-family: var(--display-font); font-size: 20px; line-height: 1.18; }
+.source-group-heading > span { display: block; margin-top: 8px; color: var(--muted); font-size: 10px; line-height: 1.55; }
+.source-group-heading a { color: var(--green); text-decoration: underline; text-underline-offset: 2px; }
+.source-group ul { margin: 0; padding: 0; border-top: 1px solid var(--line); list-style: none; }
+.source-group li { display: grid; gap: 2px; padding: 9px 0; border-bottom: 1px solid var(--line); }
+.source-group li > a { display: inline-flex; max-width: max-content; align-items: flex-start; gap: 6px; color: var(--green); font-size: 12px; font-weight: 600; }
+.source-group li > a span { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-skip-ink: auto; overflow-wrap: anywhere; }
+.source-group li > a i { flex: none; }
+.source-group li > a:hover, .source-group-heading a:hover { color: var(--ink); }
+.source-group li small { color: var(--muted); font-size: 10px; line-height: 1.4; }
+.source-caveat { margin-top: 12px; margin-bottom: 50px; padding: 17px 18px; background: #fff8cd; }
+.source-caveat h2 { font-size: 21px; }
+.source-caveat p { max-width: 800px; margin: 7px 0 10px; color: var(--charcoal); font-size: 11px; line-height: 1.5; }
+.source-caveat > a { display: inline-flex; align-items: flex-start; gap: 6px; color: var(--green); font-size: 11px; font-weight: 700; }
+.source-caveat > a span { text-decoration: underline; text-underline-offset: 3px; }
+.source-caveat > a i { flex: none; }
+.source-header a:focus-visible, .source-group a:focus-visible, .source-caveat a:focus-visible, .source-footer a:focus-visible { outline: 3px solid #146a50; outline-offset: 3px; }
+.source-footer { display: flex; min-height: 72px; align-items: center; justify-content: space-between; gap: 20px; padding: 16px max(6%, calc((100vw - 1120px) / 2)); color: #d0d0d0; background: var(--ink); font-size: 11px; }
+.source-footer > a:first-child { color: white; font-family: var(--display-font); font-size: 17px; }
+.source-footer > a:last-child { display: inline-flex; align-items: flex-start; gap: 7px; color: var(--yellow); font-weight: 600; }
+.source-footer > a:last-child i { flex: none; }
+.source-register-link { color: inherit; font-size: 11px; font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-skip-ink: auto; }
+.source-register-link:hover { color: var(--green); }
+.source-notes-page .source-footer .source-register-link:hover { color: var(--yellow); }
+.source-register-link:focus-visible { outline: 3px solid #146a50; outline-offset: 3px; }
+@media (max-width: 760px) {
+  .source-method { grid-template-columns: 1fr; gap: 14px; }
+  .source-group { grid-template-columns: 1fr; gap: 12px; }
+}
+@media (max-width: 520px) {
+  .source-header { min-height: 66px; padding-inline: 6%; }
+  .source-header .brand { font-size: 20px; }
+  .source-nav-link { gap: 6px; font-size: 12px; }
+  .source-intro { min-height: auto; gap: 13px; padding: 39px 0 28px; }
+  .source-intro h1 { font-size: 35px; }
+  .source-intro p { font-size: 13px; }
+  .source-intro-icon { width: 46px; height: 46px; font-size: 23px; }
+  .source-review { padding-top: 31px; }
+  .source-review-heading { align-items: flex-start; flex-direction: column; gap: 6px; }
+  .source-review-heading h2 { font-size: 25px; }
+  .source-review-heading .source-review-date { margin: 0; }
+  .source-group { padding-block: 18px 20px; }
+  .source-group-heading h3 { font-size: 19px; }
+  .source-caveat { margin-bottom: 36px; padding: 14px; }
+  .source-footer { align-items: flex-start; flex-direction: column; gap: 8px; padding: 19px 6%; }
+}
