@@ -16,6 +16,8 @@ Open `http://127.0.0.1:4173`.
 
 The GitHub Actions workflow publishes the buildless static site in `dist/` whenever changes are pushed to `main`. Enable GitHub Pages in the repository settings and select GitHub Actions as the deployment source.
 
+The official visa source links are checked weekly by the `Check official visa source links` workflow. Run it manually from the Actions tab when reviewing source links. A successful link check does not verify that visa rules or Open Path guidance are current.
+
 ## Deploy to Cloudflare Workers
 
 Cloudflare deployment remains independent of GitHub Pages. Wrangler serves the files in `dist/` as static assets. With Wrangler installed and authenticated, run:
