@@ -1,6 +1,7 @@
 .move-plan-page { background: var(--paper); }
 .move-plan-header { display: flex; min-height: 76px; align-items: center; justify-content: space-between; padding: 0 max(6%, calc((100vw - 1120px) / 2)); border-bottom: 1px solid var(--line); }
 .move-plan-header .brand { color: var(--ink); }
+.move-plan-header-nav { display: flex; align-items: center; gap: 22px; }
 .move-plan-nav-link { display: inline-flex; align-items: center; gap: 8px; color: var(--charcoal); font-size: 14px; font-weight: 600; }
 .move-plan-nav-link:hover { color: var(--green); }
 .move-plan-nav-link i { flex: none; }
@@ -66,6 +67,7 @@
 @media (max-width: 520px) {
   .move-plan-header { min-height: 66px; padding-inline: 6%; }
   .move-plan-header .brand { font-size: 20px; }
+  .move-plan-header-nav { gap: 13px; }
   .move-plan-nav-link { gap: 6px; font-size: 12px; }
   .move-plan-hero { min-height: auto; gap: 13px; padding: 39px 0 29px; }
   .move-plan-hero h1 { font-size: 34px; }

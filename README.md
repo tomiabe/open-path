@@ -1,6 +1,6 @@
 # Open Path
 
-A small, buildless guide to exploring a move to Australia. The site uses vanilla HTML, CSS, and JavaScript. Pathway answers are not saved unless a visitor explicitly creates a move plan. The plan's direction and checklist progress stay in local browser storage on that device.
+A small, buildless guide to exploring a move to Australia. The site uses vanilla HTML, CSS, and JavaScript. Pathway answers are not saved unless a visitor explicitly creates a move plan. The plan's direction and checklist progress stay in local browser storage on that device. The My Progress page combines saved checklist counts without sending them to a server.
 
 ## Preview locally
 
