@@ -181,6 +181,7 @@ function render() {
     : "Checklists you use will appear here. Your activity stays in this browser.";
   progress.max = Math.max(1, total);
   progress.value = complete;
+  progress.hidden = total === 0;
   progress.setAttribute("aria-valuetext", total ? `${complete} of ${total} active checklist steps checked` : "No saved checklist progress yet");
   document.querySelector("#storage-warning").hidden = storageAvailable;
 }
