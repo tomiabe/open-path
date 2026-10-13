@@ -16,7 +16,7 @@ Open `http://127.0.0.1:4173`.
 
 The GitHub Actions workflow publishes the buildless static site in `dist/` whenever changes are pushed to `main`. Enable GitHub Pages in the repository settings and select GitHub Actions as the deployment source.
 
-The official visa source links are checked weekly by the `Check official visa source links` workflow. Run it manually from the Actions tab when reviewing source links. A successful link check does not verify that visa rules or Open Path guidance are current.
+The government and transport sources listed on the source notes page are checked weekly by the `Check official guide source links` workflow. Run it manually from the Actions tab when reviewing sources. A successful link check does not verify that rules or Open Path guidance are current.
 
 ## Deploy to Cloudflare Workers
 
